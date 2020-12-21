@@ -1,0 +1,26 @@
+section{
+    width: 80%;
+    height: 800px;
+    /* background-image: url("https://images.unsplash.com/photo-1607419674405-256ed5bc8f69?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2NXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"); 
+    background-size: cover; 
+ 
+    /* background cover grows the image as large as posible without trying to sretch it too much
+    there's more to experiment with such as contain,auto */
+    /* u can also chose to have background-repeat:repeat if you wish */
+    /* background-position: top;  */
+
+    /* to you can decide which part of the image gets shown the most whether its top, left, center and other options */
+    background: top/40% no repeat url("https://images.unsplash.com/photo-1607419674405-256ed5bc8f69?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2NXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
+
+    /* you can do it liek i did above or you can list it all like this, 
+    always use / slash then the sizing comes after the positioning
+    you can specifcy at the start of the background or at the end after the url, doesnt matter, 
+    just remember to have the / after the positioning
+    you can even add more backgrounds by adding , then either a url or chose a color */
+    
+    margin: 0 auto;
+}
+h1{
+    font-size: 100px;
+    color: white;
+}

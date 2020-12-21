@@ -1,0 +1,31 @@
+h1{
+    background-color:skyblue ;
+    border: 1px solid black;
+    display: inline;
+    /* when you set to display inline, it means it follows in one line, one after another, but cannot use margin,  */
+}
+span{
+    background-color:paleturquoise ;
+    border: 1px solid black;
+     /* display: block; */
+    /* display block is used so it can take the entire  row horizontally,
+    good thing about display block element, you can change padding, width and margin and it respects it */
+    width: 500px;
+    padding: 50px;
+    margin: 100px;
+    /* because this is an inline element, it doesn't work on the margin due to it not being a blocked element
+     *that's why display will be used to change that.
+     */
+}
+div{
+    height: 200px;
+    width: 200px;
+    background-color:olivedrab ;
+    border: 5px solid black;
+    display: inline-block;
+    margin: 50px;
+    /* inline block here allows them to be plays next to each other like inline elements,
+    but also like a block element as you can manipulates with the margin like here,
+    with inline element only, you cannot do padding and margin as its horizontal only  */
+
+}

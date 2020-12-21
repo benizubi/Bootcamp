@@ -1,0 +1,116 @@
+/*
+*{
+    background-color: cyan;
+}
+ this * always allows you to change everything on the page **/
+body{
+    background-color: #a8dadc;
+    font-size: 12px;
+}
+button{
+    font-size: 20px;
+    background-color: #219ebc;
+    color: white;
+    
+}
+h1,h2{
+    color: #1d3557;
+}
+/** this allows the h1,h2 to be selected togethet */
+#signup{
+    background-color: dodgerblue;
+    color: floralwhite;
+}
+#login{
+    background-color: dodgerblue;
+    color: floralwhite;
+}
+/* this how you write a id */
+span{
+    color: #457b9d;
+}
+
+.tag{
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 17px;
+    font-weight:700;
+}
+/* this is how you use a class */
+
+.poster a{
+    color:#457b9d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* this one used a class name then space and changed everything in <a>  for that section */
+footer a{
+    color: red;
+    text-decoration: none;
+    
+}
+/* spaced is used here to only highlight what's inside of a footer and <a> */
+
+h2 + button
+{
+    font-size: 15px;
+}
+/* So this targets all the buttons that comes right after the h2 in this example to look a certain way  */
+
+footer > a { 
+     color: purple;
+ 
+    font-style: italic;
+  
+    
+}
+/* This targets only what comes dirrectly after the footer, not what's nested inside other things like nav, ul, then li before getting there */
+input[type="password"]{
+    color:red;
+}
+/* This attribute selected litteraly focus on a specific input type  instead of all input */
+
+li[class*="a"]{
+    background-color: black;
+   
+}
+/* this is another example of an attribute selector, where we focus on a specific thing */
+/* this star after the class matches any attribute value where "a" appears anywhere in the string */
+
+button:hover{
+    background-color: #7209b7;
+    color: white;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/* these two above is how you add a hover, effect and this time we used button and <a> , but can be used on anything */
+
+button:active{
+    background-color:#ff006e;
+}
+/* This allows an action to happen once clicked */
+
+.poster:nth-of-type(2n){
+    background-color:#dee2ff ;
+}
+/* you use the nth of type to only focus and highlighting every few based on the number placed here (2n) and the n is used if we want it to repeat every 2n means second line will be highlghted */
+
+ul li:first-child{
+    background-color: chartreuse;
+}
+/* this only focuses on the first element of a group of siblings e.g li */
+h2::first-letter{
+    font-size: 30px;
+}
+/* first letter here is used to manipulate the first letter of every header */
+p::first-line{
+    color: red;
+}
+/* this allows you to change the first line of anything u need, here e.g paragraphs */
+p::selection{
+    background-color: #ffc6ff;
+}
+/* you can do it to the entire document or specific thing u select will look how styled */

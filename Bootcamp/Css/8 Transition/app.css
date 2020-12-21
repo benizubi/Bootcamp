@@ -1,0 +1,44 @@
+.circle{
+    width: 300px;
+    height: 300px;
+    background-color: magenta;
+    
+    transition: background-color 1s ease-in, border-radius 2s;
+    /* transition allows an animation to play on a speed and here it's used for when u hover a page
+    here we have set it to 3 sections so its quit slow 
+    you can specify a specific thing u want to transition so here we used background color
+    you can use " all 2s" for all of it
+    you can also set a delay, like here we used 1s
+    can also transition more than one thing like the radius done here
+    can also add ease-in like that if we want it all to ease in together*/
+    
+}
+.circle:hover {
+    background-color: cyan;
+    border-radius: 50%;
+}
+section div{
+    height: 100px;
+    width: 100px;
+    background-color: turquoise;
+    margin: 20px 0;
+    transition: margin-left 3s;
+}
+section:hover div{
+    margin-left: 500px;
+    /* I'VE set that if you hover, its going to move by 500 to the right 
+    but the transition above allows it to move slower **/
+}
+ section:nth-of-type(1){
+    transition-timing-function: ease-in;
+}
+section:nth-of-type(2){
+    transition-timing-function: ease-out;
+}
+section:nth-of-type(3){
+    transition-timing-function: cubic-bezier(0.7,0,0.84,0);
+}
+section:nth-of-type(4){
+    transition-timing-function: cubic-bezier(0.085,0,0.15,1);
+}
+/* here individually we are setting different timing function instead of just allowing them all to perform at the same time */

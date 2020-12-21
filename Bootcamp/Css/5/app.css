@@ -1,0 +1,67 @@
+html{
+    font-size: 20px;
+}
+
+section{
+    background-color: #6d6875;
+    width: 800px;
+    height: 800px;
+}
+
+div{
+    background-color:#e5989b;
+    width: 50%;
+    height: 50%;
+    /* because we've set it to be 50% its going to be 50% of the parent, which is section */
+}
+h1{
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%;
+    /* so this is 200% of the font size  */
+}
+h2{
+    font-size: 2em;
+    /* setting up 2em means twice the side of the parent element which is article 30x2= 60 */
+    margin-right: 1em;
+    /* this means margin of the h2 font size, not the parent class so this will be 60 to the right */
+
+}
+p{
+    font-size: 0.5rem;
+    /* this sets the font-size to half of of the parent class */
+}
+
+article{
+    
+}
+button{
+    font-size: 1 em;
+    padding: 0 1rem;
+    border: radius 0.5em;
+    background-color: #2a9d8f;
+    color: white;
+    /* If you set the sizing using pixels, when the cotentent increases in size, it looks out of porortion
+    but if you use em like in this case, even if the font size changes, it stays relatively true to size and shape
+    highly recommend, tho this still has some issues for other things, but buttons its fine */
+}
+ul{
+    font-size: size 1.5em;
+    padding: 0 1em;
+    border-radius: 0.5em;
+    background-color: #2a9d8f;
+    color: white;
+/* using rem is better than using em because, em follows the parent above each time, so line using this list
+the size gets smaller everytime, whereas a rem uses the size of the root html size page each time, doesn't matter where you are
+ */
+}
+#rems h3{
+ font-size: 2rem;
+}
+#rems h2{
+    font-size: 1rem;
+}
+#rems ul{
+    font-size: 1rem;
+}
+/* rems is easy to use and relatex more to how things looks for the rest of the document */

@@ -1,0 +1,58 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    text-align: center;
+}
+#container{
+    background-color: #003049;
+    width: 90%;
+    height:500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction:row;
+    /* flex-direction row shows containt across and the column shows going down, so then
+    justify content can be used to specify how we want content placed. */
+    justify-content:center;
+    flex-wrap: wrap;
+    /* wrap is used to bring them together  so it stays */
+    /* this wraps content together in order, there's different type of wraps
+    nowrap is the default value for flex wrap */
+    align-items: flex-start;
+    
+}
+#container div{
+    height: 200px;
+    width: 200px;
+    max-width: 150px;
+    max-height: 50px;
+    text-align: center;
+    /* max height and width here is set so that the object doesn't exeed that */
+  }
+div:nth-of-type(1){
+    flex-grow: 1;
+    /* flex grow allows you to give aditional space to an object you're working with can be specific
+    this also containts text wrap*/
+
+}
+div:nth-of-type(3){
+    flex-grow: 2;
+/* use nth of type when focusing on single objects */
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+main .sidebar{
+    background-color: #6930c3;
+    flex: 1 2 300px;
+}
+main .maincontent{
+    background-color: #80ffdb;
+    flex: 2 1 800px;
+    /*  flex shorthand is very important to remmber and always used to give out different sizig and shrink or grow accordingly */
+}

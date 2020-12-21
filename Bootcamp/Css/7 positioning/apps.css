@@ -1,0 +1,57 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    display: inline-block;
+    margin: 10px;
+}
+#midle{
+    background-color:#81b29a;
+}
+#static #midle{ /* static is the default position on html */
+   position: static;
+    top: 100px;
+    /* the position static is the default used position */
+}
+ #relative #midle{ /* position how u would on a graph with + and - */
+    position:relative;
+    top: 50px;
+    left: 50px;
+    /* relative keeps the positioning relative to where it started, but now can adjust where we want it
+    based on the initial position */
+
+}
+#absolute{
+    position: relative;
+}
+#absolute #midle{
+    position: absolute;
+    top: 50px;
+    left: 1px;
+    /*  this position the element by removing it from static positioning, so closer to the start of its parent element
+    I've set the parent to relative so that it starts from the parent, which in this case is section with the iD of "absolute"
+    then you can also move it left, up,right and down
+    */
+}
+ 
+#fixed #midle{
+    position: fixed;
+/* this is similar to absulte however this does not position from the parent element instead
+this position relative to the initial containing block established 
+however this does not move and stays there even if you scroll down
+also it brings the fixed element right in front of the fix or anything when scrolling
+good for fixed nav bars*/
+top: 0px;
+left: 0px;
+}
+
+#sticky #midle{
+    position:sticky;
+    top: 200px;
+    left: 50px;
+    /* stick is like fixed however, it first starts off as static, then sticks when the page scrolls down  */
+}
+
+
+

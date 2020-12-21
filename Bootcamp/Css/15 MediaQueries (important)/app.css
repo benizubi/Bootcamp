@@ -1,0 +1,107 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    font-size: 6em;
+    text-align: center;
+}
+nav{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;    
+}
+  ul,li { 
+    display: inline;
+    margin: 0;
+    padding: 0;
+    /* so here we change the padding  and margin to 0 top and bottom 
+    display inline so content should appear on a single line*/
+}
+ul{
+    border: 2px solid red;
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    /* here we've added so each object has spaces evently split
+       */
+
+}
+ 
+/* Below is how you do mediaqueries */
+ /* @media (min-width:600px) and (max-width:800px){
+    h1{
+        color: purple;
+    }
+  } */
+ /*  @media (max-width:1500px){
+      h1{
+          color: yellow;
+      }
+  }
+
+  @media (max-width:1000px){
+    h1{
+        color:orange;
+    }
+}
+
+@media (max-width:500px){
+    h1{
+        color: blue;
+    }
+ } */
+/* I can do it this way or i can do it all together and use and like i did above 
+Hwoever this way, the order matters so the heights numbers has to be written first then the smallest, otherwise it wont work properly
+ */
+
+ h1{
+     color:green;
+ }
+ @media (min-width:500px){
+     h1{
+        color: red;
+     }
+ }
+
+ @media (min-width:1000px){
+    h1{
+       color: yellow;
+    }
+}
+
+@media (min-width:1500px){
+    h1{
+       color: blue;
+    }
+}
+
+/* depending on which one you used, but they always have to be done by ascending order or desending order so it works effitiently.  */
+
+ /* @media (orientation: landscape){ 
+    body{
+        background-color:magenta ;
+    }
+}
+*/
+/* the code above is used for when in lanscape mode */
+/*  */
+@media (max-width:768px){
+    h1{
+        font-size: 4em;
+        
+    }
+    nav, nav ul{
+        flex-direction: column;
+        /* this means when it reaches this size, it changes it to a column instead of the row */
+        align-items: center;
+    }
+  
+    /* this concentre on making the ul into a column now so it works all together */
+}
+@media (max-width:576px){
+    h1{
+        font-size: 3em;
+        color: pink;
+    }
+}

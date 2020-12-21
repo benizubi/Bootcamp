@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+    font-weight: 400;
+    text-decoration: #f78120 underline wavy;
+    letter-spacing: 15px;
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    color: blue;
+}
+a{
+    text-decoration: none;
+}
+p{
+    line-height: normal;
+}
+*{
+
+    color:rgb(17, 233, 17);
+    background-color: cornflowerblue;
+}
+

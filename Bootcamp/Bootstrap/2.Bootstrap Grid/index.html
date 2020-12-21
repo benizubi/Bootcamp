@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Everytime before i use bootstrap i need to copy this link above from bootstrap 
+    Bootstrap is essentially good for quickly using already made styled-->
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-1 text-center text-primary"> The Grid System</h1>
+        <div class="row">
+            <!-- need the row each time to create the grid -->
+            <div class="col-2 bg-success"> I AM 2 Units</div>
+            <div class="col-8 bg-danger"> I AM 8 Units</div>
+            <div class="col-2 bg-success"> I AM 2 Units</div>
+        </div>
+        <div class="row">
+            <div class="col-3 bg-success"> I AM 3 Units</div>
+            <div class="col-6 bg-danger"> I AM 6 Units</div>
+            <div class="col-3 bg-success"> I AM 3 Units</div>
+        </div>
+        <div class="container">
+            <!-- can have nested container -->
+            <div class="row">
+                <div class="col bg-primary"> auto Size</div>
+                <div class="col-4 bg-info"> my own</div>
+                <div class="col bg-success"> Auto size</div>
+                <div class="col bg-primary"> Auto size</div>
+            </div>
+        </div>
+        <h2 class="display-2">Responsive Grid</h2>
+        <!-- used display 2 here coz we already have display 1 -->
+        <div class="row">
+            <div class="col-md-6  col-xl-3 bg-info">
+                <!-- so in the class here if we just leave it as col-6 and have two of these, it will split into 2 adding it to 12 grid
+                  the md-6 means after the page gets to a md for miduim point, it will share 6 x 6 space so split in half, but emergies together when screen below md 
+                 the col-xl-3 means that it will add to 3 rows across when the page gets to xl -->
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam nisi repellendus architecto distinctio
+                soluta eligendi consectetur iure, tempora blanditiis incidunt debitis quae veniam laboriosam in,
+                quibusdam eius dolores voluptate!
+            </div>
+            <!-- that created a row -->
+            <div class="col-md-6 col-xl-3  bg-success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam nisi repellendus architecto distinctio
+                soluta eligendi consectetur iure, tempora blanditiis incidunt debitis quae veniam laboriosam in,
+                quibusdam eius dolores voluptate!
+            </div>
+            <div class="col-md-6  col-xl-3 bg-primary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam nisi repellendus architecto distinctio
+                soluta eligendi consectetur iure, tempora blanditiis incidunt debitis quae veniam laboriosam in,
+                quibusdam eius dolores voluptate!
+            </div>
+            <!-- that created a row -->
+            <div class="col-md-6 col-xl-3  bg-warning">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam nisi repellendus architecto distinctio
+                soluta eligendi consectetur iure, tempora blanditiis incidunt debitis quae veniam laboriosam in,
+                quibusdam eius dolores voluptate!
+            </div>
+        </div>
+
+
+        <h2>Grid Alignment</h2>
+        <div class="row align-items-center">
+            <!-- using align-items on the  the y axis   -->
+            <div class="col-md-6  col-xl-3 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam nisi repellendus architecto distinctio
+                soluta eligendi consectetur iure, tempora blanditiis incidunt debitis quae veniam laboriosam in,
+                quibusdam eius dolores voluptate! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                consequatur doloremque natus quaerat totam eius ex delectus sapiente facere eos quis mollitia
+                accusantium, nulla, beatae quasi quo! Similique, aspernatur quidem. Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Eum, quo molestias. Mollitia officia ex quas quaerat quod repellat illum
+                odio explicabo quam! Doloribus, illum quibusdam quae alias earum fuga voluptatum.
+            </div>
+
+            <div class="col-md-6 col-xl-3  bg-success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam nisi repellendus architecto distinctio
+                soluta eligendi consectetur iure, tempora blanditiis incidunt debitis quae veniam laboriosam in,
+                quibusdam eius dolores voluptate!
+            </div>
+            <div class="col-md-6  col-xl-3 bg-primary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam nisi repellendus architecto distinctio
+                soluta eligendi consectetur iure, tempora blanditiis incidunt debitis quae veniam laboriosam in,
+                quibusdam eius dolores voluptate!
+            </div>
+            <div class="col-md-6 col-xl-3  bg-warning align-self-end">
+                <!-- align self here like on flexbox its used to align a single element -->
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam nisi repellendus architecto distinctio
+                soluta eligendi consectetur iure, tempora blanditiis incidunt debitis quae veniam laboriosam in,
+                quibusdam eius dolores voluptate!
+            </div>
+        </div>
+
+        <h3> JUstify Content</h3>
+        <div class="row border justify-content-center justify-content-lg-start justify-content-xl-between">
+            <!-- justify content like flexbox i used to place the element where we want on the x axis.
+            also we have set it here to be placed on the center, but when screen large, it will move content to start (far left)
+            then the last justify is used to set it so if resize screen to xl, then it will move content spac between -->
+            <div class="col-4 bg-primary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta enim molestias nemo laborum, aspernatur,
+                assumenda veritatis voluptates fugit nam quibusdam doloribus rem nesciunt quaerat similique, inventore
+                fugiat tenetur iste excepturi.
+            </div>
+            <div class="col-4 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta enim molestias nemo laborum, aspernatur,
+                assumenda veritatis voluptates fugit nam quibusdam doloribus rem nesciunt quaerat similique, inventore
+                fugiat tenetur iste excepturi.
+            </div>
+        </div>
+
+        <div class="row no-gutters">
+            <!-- no gutters removes the extra spaces to the images  take it off if u want the spaces-->
+            <div class="col-xl-4 col-md-6">
+                <!-- xl- 4 basically means the xl means when screen is xl, i want u to give me 4x3 to give 12 grid -->
+                <img class="img-fluid"
+                    src="https://images.unsplash.com/photo-1608400074302-986ae640ff57?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80">
+                <!-- use img-fluid when using imagines  -->
+            </div>
+
+            <div class="col-xl-4 col-md-6">
+                <!-- the col-md-6 means when it gets medium md i want it to split in two in one like coz grid is 12 then the other 6 goes to a different row -->
+                <img class="img-fluid"
+                    src="https://images.unsplash.com/photo-1608327070138-f325a945c8cb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                    alt="">
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <img class="img-fluid"
+                    src="https://images.unsplash.com/photo-1608371322643-3c871d37607e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <!-- always copy this here everytime you use bootstrap
+    if making real life project, best to download boostrap  -->
+</body>
+
+</html>

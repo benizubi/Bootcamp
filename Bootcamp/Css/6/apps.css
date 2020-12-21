@@ -1,0 +1,27 @@
+section{
+    width: 500px;
+    height: 500px;
+    background-color: magenta;
+}
+
+#rgba{
+    width: 50%;
+    height:50%;
+
+    background-color:rgba(255,255,255,0.3);
+    /* can also be written as 00cca0b9 the last two digit are for alpha */
+    /* the alpha value is used for transparency for backgrounds color of the element, but not text, 
+    the lower the number the more transparent and the higher the less transparent */
+}
+
+#opacity{
+    width: 50%;
+    height:50%;
+    background-color:yellow;
+
+    opacity: 0.9;
+    /* whereas the oppacity changes the transparency of the entire thing, text included by fading it out depending on how transparent u want it to look
+     the entire div element is going to be affected */
+
+
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forms Demo</title>
+</head>
+
+<body>
+    <nav>
+        <li><a href="chickens.html"> Chickens</a></li>
+
+    </nav>
+    <h1> Forms Demo</h1>
+    <form action="/tacos">
+        <p>
+            <label for="username"> Enter a Username:</label>
+            <input type="text" placeholder="Username" id="username" name="username">
+            <!-- should user name attribute on every input as it's what gets send to the server -->
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Password" id="password" name="password">
+            <!-- The placeholder attribute acts as a background text to noticy the user what's the input for -->
+
+        </p>
+        <p>
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date">
+        </p>
+        <p>
+            <label for="number">Contact Number:</label>
+            <input type="number" placeholder="enter a number" id="number" name="number">
+            <!-- This creates the input box, for different types, some listed above
+            can also add min and max numbers for the input attribute -->
+
+        </p>
+        <button>Submit</button>
+        <!-- A button inside a form, by default will submit once clicked. -->
+        <!-- The button here works by once clicked, takes u to the form action part -->
+        <input type="submit" value="Click me">
+        <!-- This is another to create a button with same action inside of a form -->
+    </form>
+    <hr>
+    <button>Outside Submit</button>
+    <!-- This doesnt not submit like the other because it's outside the form -->
+    <h2>Hijacking Searchs</h2>
+    <h3> Reddit Search</h3>
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+        <!-- the q above has to mauch with the name used on reddit to get a result -->
+        <!-- Whatever value's input above will be sent to the reddit action above -->
+        <button>search</button>
+
+    </form>
+    <h3> Google search </h3>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button> Search Google</button>
+        <!-- The name and action are used when submitted naming has to match an order to work -->
+
+    </form>
+    <h3>Youtube Search</h3>
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <!-- The youtube naming is different to the other action based on what youtube name their action -->
+        <button>Search You</button>
+
+    </form>
+    <h2>MOre Input:</h2>
+    <form action="/chickens.html">
+        <input type="checkbox" id="agree" name="agree_tos" checked>
+        <!-- The checked attribute is used, so its checked by default -->
+        <label for="agree">Full agree</label>
+        <!-- labels important to use like this so it connects to the checkbox -->
+        <p>
+            <input type="radio" name="size" id="one" value="size1">
+            <!-- important to use value, because whatever's there will be whats get sent to the server. -->
+            <label for="one"> Size 1</label>
+            <input type="radio" name="size" id="two" value="2">
+            <label for="two">Size 2</label>
+            <input type="radio" name="size" id="three" value="3">
+            <label for="three">size 3</label>
+            <!-- You have to name them the same name 'size' in order to be able to only select one option. -->
+        </p>
+
+        <p>
+            <label for="meal">Please Select Entry</label>
+            <select name="meal" id="meal">
+                <!-- the name and for 'meal' has to match the for "meal" so it's attached next to it for the options -->
+                <option value="fish">Fish</option>
+                <option value="veg">Vegetarian</option>
+                <option value="fish" selected>Fish</option>
+                <!-- The selected option here allows you to be automatically selected as the first option -->
+
+            </select>
+            <!-- the  option down list works together and has to be used inside a select -->
+        </p>
+        <p>
+            <label for="cheese">Amount of Cheese:</label>
+            <input type="range" id="cheese" min="1" max="10" value="50" name="cheese">
+            <!-- the min and max is what the value can increase up to
+            name should also be included as it's the name of the attribute that gets sent to the server
+            can also inculde a value so it will always starts from that value
+        -->
+
+        </p>
+        <p>
+            <label for="request">Any special requests</label>
+            <br>
+            <textarea name="requesting" id="request" cols="40" rows="10" minlength="10" maxlength="100"
+                placeholder="Enter your feedback here"></textarea>
+        </p>
+        <!-- The textfeed is good for feedback  and need a label, but not input just textarea -->
+
+        <button>Submit</button>
+
+    </form>
+    <h2>Validations Demo</h2>
+    <form action="/dummy">
+        <label for="first">Enter First Name</label>
+        <input type="text" name="first" id="first" required>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" minlength="5" maxlength="11" required>
+        <!-- the minlength, maxlength, and required arse things to use for validations  -->
+
+        <p>
+            <input type="url">
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>

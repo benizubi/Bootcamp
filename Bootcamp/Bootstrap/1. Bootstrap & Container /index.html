@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Everytime before i use bootstrap i need to copy this link above from bootstrap 
+        Bootstrap is essentially good for quickly using already made styled-->
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="container-md">
+        <h1 class="display-1 text-center text-primary">Bootstrap Playground</h1>
+        <!-- text-center aligns the texts  primary adds a diffent color to our text-->
+        <h2 class="display-4">Buttons<span class="badge badge-success badge-pill">1</span></h2>
+        <!-- badget is not very good for accessibility especially for text to read. badge pill sets the radious to 50% so its more round -->
+
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Primary</button>
+        <button type="button" class="btn btn-info">Primary</button>
+        <button type="button" class="btn btn-outline-warning">Warning Outline</button>
+        <button type="button" class="btn btn-outline-danger">Danger Outline</button>
+        <button type="button" class="btn btn-outline-info btn-lg">Info Outline</button>
+        <button class="btn btn-primary">Update <span class="badge badge-light">10</span></button>
+        <button type="button" class="btn btn-secondary btn-sm">SM Button</button>
+
+        <!-- these are different types of buttons we can use with bootstrap -->
+        <h3>Button Groups</h3>
+        <div class="btn-group">
+            <button class="btn btn-warning">One</button>
+            <button class="btn btn-danger">Two</button>
+            <button class="btn  btn-warning">Three</button>
+        </div>
+        <!-- these could be used in a instance of a fancy radio button. -->
+        <h3>Alerts</h3>
+        <!-- the alert only works with the bootstrap crips -->
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <!-- the fade show adds an effect on itwhen it closes and role for screen reader its important info -->
+            <h4 class="alert-heading"> Yay!</h4>
+            Weldone! Beni!
+            <button aria-label="Close" class="close" data-dismiss="alert">
+                <!-- the span is hiden and the label above gets shown -->
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <h2 class="display-4"> For Typography Stuff</h2>
+        <!-- display- 1-4 basically are different font sizes and boldness -->
+
+        <p class="lead">
+            <!-- class leads changes font size and weight -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quam sequi dolore, minus cum quae aperiam,
+            incidunt exercitationem quaerat eos et explicabo provident ad iure quis? Veniam odit enim
+            obcaecati?Quibusdam dignissimos explicabo, illo corporis ex, nam excepturi animi fuga, esse nihil enim
+            tempora iure eum amet. Ab, in eligendi dolorum excepturi minima dolor hic quas optio deserunt, cumque
+            quaerat.
+        </p>
+        <blockquote class="blockquote text-right bg-light">
+            <p class="mb-0">
+                <!-- that class basically sets margins to be 0 so there's less space-->
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ex beatae fugit voluptates omnis
+                accusantium ducimus, commodi, adipisci cum inventore sequi dolores officia, cupiditate placeat
+                voluptatum suscipit accusamus veniam debitis.
+            </p>
+            <footer class="blockquote-footer"> Mr Lorem Ipsum</footer>
+            <!-- this adds a dash in front of the person's name -->
+        </blockquote>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <!-- always copy this here everytime you use bootstrap
+    if making real life project, best to download boostrap  -->
+</body>
+
+</html>

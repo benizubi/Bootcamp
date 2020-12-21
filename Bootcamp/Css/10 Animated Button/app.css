@@ -1,0 +1,34 @@
+
+body{
+ background-color: #151b29;
+ font-family: sans-serif;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+ 
+}
+button{  background-color: #151b29;;
+border: 2px solid #f77f00;
+ color: #f77f00;
+ padding: 1em 2em;
+ font-size: 1em;
+ /* always use em when making buttons */
+ transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+ /* you can just either use all to transition all of em or list em out like above */
+
+}
+
+
+button:hover{
+ color: #f1ff5c;
+ border-color: #f1ff5c;
+ transform: translateY(-0.25rem);
+ box-shadow: 0 0.5em 0.5em -0.4mm #f1ff5c;
+ /* box-shadow has been set for x y up and down grid,so how wide we want the shadow spread */
+ /* always use em when creating buttons */
+
+ cursor: pointer;
+ /* this sets the mouse to be more pointy when hovered so it shows we can interact with it*/
+
+}

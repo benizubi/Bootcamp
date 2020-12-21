@@ -1,0 +1,26 @@
+img{
+    width: 30%;
+    margin: 1%;
+    /* margin here allows the pic to have spaces and use percentages so its flexible when resieing page tab 
+    can also use margin: calc(10%/6) so get the same results.
+    10% because each image takes 30% so we have 10% left
+    divided by 6 because each image takes 2 sides so 2x3=6*/
+
+}
+nav{
+    text-transform: uppercase;
+    /* this makes it to a captical for all */
+    border-bottom: 2px solid #f1f1f1;
+    width:30%;
+    margin-left:1%;
+    /* the width and margin here sets the bottom border aligned with the 1 imagine width and margin  */
+    padding: 0.5em 0 ;
+    /* the 20 is for top and bottom and the 0 for sides.  */
+    font-family: Raleway;
+    font-size: 1.4em;
+    /* use ems here other than pixels  */
+
+
+
+
+}
