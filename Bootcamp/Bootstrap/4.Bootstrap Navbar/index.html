@@ -16,12 +16,21 @@
         <a class="navbar-brand" href="#">Navbar</a>
     </nav>
      above is example one and below is example two the navbar-light is the text color and bg background color-->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+        <!-- the fix top allways the navbar to be fixed at the top so whenever scrolling down it will maintain the top position 
+        there's also sticky-top, fixed-bottom and others.-->
         <a class="navbar-brand" href="#">Navbar
             <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60"
                 width="30" height="30" class="d-inline-block ">
         </a>
-        <div class="collapse navbar-collapse">
+
+        <!-- the image above serves as a logo -->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#connectall">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- the nav-toggler plays a role of when the page is small, it brings a toggler button with all the navbars in it 
+        we connect the button to the navbar links by adding the data-target and data-target so the target matches the id -->
+        <div class="collapse navbar-collapse" id="connectall">
             <!-- collapse above is used for showing and hiding content so how show and collapse the nav-bar-->
             <div class="navbar-nav">
                 <a href="#Home" class="nav-item nav-link">Home</a>
@@ -29,6 +38,12 @@
                 <a href="#Home" class="nav-item nav-link">Contact</a>
                 <!-- this lists the nav-bars together inline-->
             </div>
+            <form class="form-inline ml-auto">
+                <!-- ml-auto adds the margin to the far right -->
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <!-- the form is the search button -->
         </div>
     </nav>
 
