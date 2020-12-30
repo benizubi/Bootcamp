@@ -69,3 +69,21 @@ if (password.length >= 6) {
 // }else{
 //     console.log("Password cannot contain spaces!")
 // } 
+// next part now above is done 
+
+
+// const num = 102; // THIS IS THE ONLY LINE YOU SHOULD CHANGE :) 
+
+// // DO NOT TOUCH ANYTHING BELOW (please) 
+// if(num <= 100) {
+//     if(num >= 50) {
+//         console.log("HEY!");
+//     }
+// } else { 
+//     if (num < 103) {
+//         if(num % 2 === 0){
+//             console.log("YOU GOT ME!");
+//         }
+//     }
+// }
+
