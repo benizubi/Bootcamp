@@ -24,7 +24,6 @@
 // 5-10 $10
 // 10-65 £20
 // 65+ free
-
 // const age = 10;
 // if (age >= 0 && age < 5 || age >= 65) {
 //     console.log("FREE");
