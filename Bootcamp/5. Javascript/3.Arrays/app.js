@@ -27,3 +27,21 @@ colors.shift()
 // Unshift
 // Unshift behaves like a push, but instead it adds to the start for example:
 colors.unshift('VIP')
+
+// Concat is used to merge one or more arrays for example:
+let dogs = ['rusty', 'musty', 'meat'];
+let totalstuff = colors.concat(dogs)
+console.log(totalstuff);
+// console log will then print out what's in color first, then dogs as one array.
+
+// indeOf(rusty) is basically asking in the array what's the index number for rusty here it's 0 For example:
+let rustyN = indexOf('rusty');
+console.log(rusty)
+
+// Slice
+// Slice basically creates a copy of the same array and stores to another array if you use just the .slice() method
+// However if you do something like dogs.slice(1) = its going to give you elements from the index number u chose
+// here we chose 1 so it will start from 1 to the end returning you
+// ['musty','meat'] only but we can also select where we want it to end so (0,3) means 0 start 3 where to end
+let Ndogs = dogs.slice(1);
+console.log(Ndogs)
