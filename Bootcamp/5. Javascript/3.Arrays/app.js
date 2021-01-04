@@ -45,3 +45,7 @@ console.log(rusty)
 // ['musty','meat'] only but we can also select where we want it to end so (0,3) means 0 start 3 where to end
 let Ndogs = dogs.slice(1);
 console.log(Ndogs)
+
+// Array + Const
+// You can use const for arrays as long as the reference remains the same for example:
+const myEggs = ['brown', 'brown'];
