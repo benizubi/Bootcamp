@@ -49,3 +49,13 @@ console.log(Ndogs)
 // Array + Const
 // You can use const for arrays as long as the reference remains the same for example:
 const myEggs = ['brown', 'brown'];
+
+// Nested Arrays
+// You can have nested arrays and access them like this for example:
+const gameBoard = [['X', '0', 'X'], ['0', 'null', 'X'], ['0', '0', 'X']]
+
+// the nested array will be stored in a column style, the first array on top, then middle the middle, then last on the bottom
+// and if I wanted to access the last element of the first Array, you will use this method for e.g
+gameBoard[1][1]
+// the first 1 checks for the index array so the middle will be number 1
+// the second 1 is for the index placed within the chosen array so here we turning 'null'
