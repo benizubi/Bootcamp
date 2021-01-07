@@ -125,4 +125,10 @@ for (let submit of subreddits) {
     console.log(`Visit reddit.com/r/ ${subreddits[submit]}`)
 }
 // instead you can write the for of like done above and it looks cleaners and simlier than the normal for loop
+// for example
+// here below i used the array methods and a for of to access square numbers
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //DON'T CHANGE THIS LINE PLEASE!
+for (let kristine of numbers) {
+    console.log(`${kristine * kristine}`);
+}
 
