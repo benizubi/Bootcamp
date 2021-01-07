@@ -114,3 +114,15 @@ while (true) {
 }
 
 
+// For..of/ mainly used with arrays 
+// This is a nice and easy way of interating over arrays or other iterable objects. Example:
+const subreddits = ['time', 'arguing', 'sports', 'time', 'sleep', 'sex', 'food']
+for (let l = 0; l < subreddits.length; l++) {
+    console.log(`Visit reddit.com/r/${subreddits[l]}`)
+}
+// so instead of usually writing like the code above to run the array, you can instead use
+for (let submit of subreddits) {
+    console.log(`Visit reddit.com/r/ ${subreddits[submit]}`)
+}
+// instead you can write the for of like done above and it looks cleaners and simlier than the normal for loop
+
