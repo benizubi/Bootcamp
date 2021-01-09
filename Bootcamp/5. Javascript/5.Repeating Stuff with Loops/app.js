@@ -171,4 +171,4 @@ for (let scoring of scores) {
 }
 console.log(total / scores.length)
 
-// So you can eithernuse this preating over objects method or the previous method.
+// So you can either use this preating over objects method or the previous method.
