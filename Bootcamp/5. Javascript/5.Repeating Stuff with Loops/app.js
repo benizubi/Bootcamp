@@ -38,7 +38,7 @@ for (let i = 20; i >= 0; i++) {
     console.log()
 }
 
-// Looping Over Arrays
+// Looping Over Arrays//
 
 // To Look Over an Array, start at index 0 and continue looping to until last index length-1
 const animals = ['lions', 'tigers', 'bears'];
@@ -54,7 +54,7 @@ for (let o = animals.length - 1; o >= 0; o--)
     // to access the array we need to use the animals[o] format
 }
 
-// NESTED LOOPS / printing individual names
+// NESTED LOOPS / printing individual names//
 const seatingChart = [
     ['Kristine', 'Erik', 'Namita'],
     ['Geoffrey', 'Juanita', 'Antonio', 'Kevin'],
@@ -76,7 +76,7 @@ for (let m = 0; m <= seatingChart.length; m++) {
 // The second/ nested loop, allows us to print each names individually 
 
 
-// WHILE LOOPS /
+// WHILE LOOPS //
 //  continues running as long as the test condition is true
 // let num = 0;
 // while(num <10)
@@ -85,7 +85,7 @@ for (let m = 0; m <= seatingChart.length; m++) {
 //     num++;
 // }
 
-// Password prompt for entering the right password. 
+// Password prompt for entering the right password. //
 const Secret = "BabyHippo";
 
 let guess = prompt("Enter The Secret Code");
@@ -96,7 +96,7 @@ console.log("CONGRATS")
 // this only runs if the while statements is true
 
 
-// THE BREAK KEYWORD / common with loops
+// THE BREAK KEYWORD / common with loops//
 // This allows you to break the loop and execute something for example:
 let targetNum = Math.floor(Math.random() * 10);
 let guess = Math.floor(Math.random() * 10);
@@ -114,7 +114,8 @@ while (true) {
 }
 
 
-// For..of/ mainly used with arrays 
+// For..of/ mainly used with arrays // This is used all the time
+
 // This is a nice and easy way of interating over arrays or other iterable objects. Example:
 const subreddits = ['time', 'arguing', 'sports', 'time', 'sleep', 'sex', 'food']
 for (let l = 0; l < subreddits.length; l++) {
@@ -127,8 +128,47 @@ for (let submit of subreddits) {
 // instead you can write the for of like done above and it looks cleaners and simlier than the normal for loop
 // for example
 // here below i used the array methods and a for of to access square numbers
+//  Here's an example of finding square numbers for this array. 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //DON'T CHANGE THIS LINE PLEASE!
-for (let kristine of numbers) {
-    console.log(`${kristine * kristine}`);
+for (let squared of numbers) {
+    console.log(`${squared * squared}`);
 }
+// using ${} method is important here, because anything within those gets evaluated in a calculation format
+// Also using the for of loop here to print everything.
 
+// Iterating/repeat over Onjects //
+// Using the For...in Loops/ however it's not used as common as other loops these days for example:
+const testScores = {
+    Keenan: 80,
+    damon: 67,
+    kim: 89,
+    shawn: 91,
+    marlon: 72,
+    dwayne: 77,
+    nadia: 83,
+    elvira: 97,
+    diedre: 81,
+    vonnie: 60,
+}
+// for (let person in testScores) {
+//     console.log(`${person} scored: ${testScores[person]}`);
+//     // if i just put person on the console.log(person) it will only return the names so if u want to return the value use `` method with ${} for example like done here
+// can either do it like this above
+// }
+// Hwoever to iterates arrays you can also use the Object method to use for example here it would be 
+Object.keys(testScores)
+// and if you wanted to print out the key value only then u can also use
+Object.values(testScores)
+// or you can use entry which returns a nested array with all the keys values paired
+Object.entries(testScores)
+
+// so using this knowledge here we are tryign to print out all the values and adding them up so we can ge the average value;
+
+let total = 0;
+let scores = Object.values(testScores);
+for (let scoring of scores) {
+    total += score;
+}
+console.log(total / scores.length)
+
+// So you can eithernuse this preating over objects method or the previous method.
