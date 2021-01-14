@@ -2,7 +2,7 @@
 // Aceepts a callback function and calls the function once per element in the array.
 // ForEach doesn't get as used as much anymore because of the for of
 
-const numbers = [1, 2, 3, 4, 5, 6, , 7, 8, 9, 10];
+const numbers = [1, 2, 3, 4, 5, 6, , 7, 8, 9, 10, 11, 12, 13, 14, 15];
 // function print(element) {
 //     console.log(element)
 // }
@@ -114,3 +114,64 @@ const id = setInterval(() => {
 }, 2000);
 clearInterval(id);
 // Hwoever this repeats and to stop it you need to use the const id we created to stop it you will need to use clearInterval(id) for it to stop.
+
+// The filter method //
+//  The filter method creates a new array with all elements that pass the test implemented by the provided function.
+
+numbers.filter(n => {
+    return n < 10
+});
+// so basically what filter does is that it will create a new array and run whatever we return in a new array dispalying the results of the argument so the code above here here we will get anything less than 10 returned
+// It's used to create a new array, however it doesn't change anything in the original array so the numbers here will still contain everything
+// Another example:
+const goodMovies = movies.filter(m => m.score > 80)
+const goodTitles = goodMovies.map(m => m.title)
+
+// Some & Every Methods//
+// Every - tests whether all elements in the array pass the provided function. it returns a boolean value.
+// Some - similar to evey, but return true if any of the array elements pass the test function
+// these two are boolaen and always returns true or false;
+
+//Every 
+const exams = [80, 98, 92, 78, 77, 90, 89, 84, 81, 77,]
+
+exams.every(score => score >= 75)
+// everything arguments will be passed to every () like bove
+// so if any we had a number below 75 like 74, it will return false for all of them
+
+// Some
+// similar, but this checks if some or any pass the test
+// if there is some then it will so at least 1 thing has to return 
+exams.some(score => score >= 75)
+
+// Reduce Method //
+//  the point of its to somehow end up with a single value so it executes a reduced function of what we provid on each element of the array 
+// You can also use it to add up all the values in a array
+const prices = [9.99, 1.50, 19.99, 49.99, 30.50]
+
+// const total = prices.reduce((total,price) =>{
+//     return total+ price;
+// }) this basically sums up all the elements in the array together
+// its the same as writing it like this
+const total = prices.reduce((total, price) => total + price)
+// if i want to find the smallest value, i can use this method 
+prices.reduce((min, price) => {
+    if (price < min) {
+        return prices;
+    }
+    return min;
+})
+
+// best movie?
+const highestRated = movies.reduce((bestMovie, currMovie) => {
+    if (currMovie.score > bestMovie.score) {
+        return currMovie
+    }
+    return bestMovie;
+})
+// we can also specific the starting point of our accumumilato
+const evens = [2, 3, 4, 5, 6, 7];
+evens.reduce((sum, num) => sum + num, 100)
+// so that's going to add up all the numbers together but i can add another value, for example starting point like done here
+
+
