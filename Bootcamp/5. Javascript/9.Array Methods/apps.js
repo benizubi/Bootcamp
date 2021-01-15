@@ -145,6 +145,15 @@ exams.every(score => score >= 75)
 exams.some(score => score >= 75)
 
 // Reduce Method //
+[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+})
+// the accumulator, holds the sum and the currentvalue represents each element in the array 
+// it does it on different calls so first call will be the first two value so 3 for accumulator
+//  and 5 for currentvalue so the sum is 8 and meaning the next call 8 will be the next accumulator and
+//  current will be then 7 and then so on. whatever the sum for the call is, will be used on the next accumulator  
+
+// the parameters can be named whatever you want it to be
 //  the point of its to somehow end up with a single value so it executes a reduced function of what we provid on each element of the array 
 // You can also use it to add up all the values in a array
 const prices = [9.99, 1.50, 19.99, 49.99, 30.50]
@@ -175,3 +184,21 @@ evens.reduce((sum, num) => sum + num, 100)
 // so that's going to add up all the numbers together but i can add another value, for example starting point like done here
 
 
+// Arrow Function 'This'
+//  the 'this' works differently when using function to how it does when using arrows.
+const person = {
+    firstNames: 'Kho',
+    lastName: 'Morgan',
+    fullName: function () {
+        return `${this.firstNames} ${this.lastName}`
+    },
+    // when using the function this gives us the key elements because 'this'  return element on whats on the left of what we're calling so if we call person.fullName , person is on the left side of the cot and returns its value 
+    // if you do the same above but change function for => it will return undefined because its refers to the windows object
+    shoutName: function () {
+        setTimeout(() => {
+            console.log(this);
+            console.log(this.firstNames())
+        }, 3000)
+        // here the => will work fine but not function because we calling a settimeOut so here function behaves like its calling the window again, but the => works fine
+    }
+}
