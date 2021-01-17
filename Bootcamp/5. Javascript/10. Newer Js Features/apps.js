@@ -136,3 +136,4 @@ users.map(({ firstName, LastName, birthday }) => {
     return `${firstName}, ${LastName} in ${birthday}`
 });
 // so the code above is the destructed reversion of the commented out map code. bothh works same way
+const h1 = document.querySelectorAll('span');
