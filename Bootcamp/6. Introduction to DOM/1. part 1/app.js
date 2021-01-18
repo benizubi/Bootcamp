@@ -25,3 +25,4 @@ const allLinks = document.querySelectorAll('a');
 // document.querySelectorAll('span')[4].style.color = colors[4];
 // document.querySelectorAll('span')[5].style.color = colors[5];
 // document.querySelectorAll('span')[6].style.color = colors[6];
+h2.classList.add('border')
