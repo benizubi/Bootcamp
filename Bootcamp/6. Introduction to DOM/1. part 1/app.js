@@ -25,4 +25,28 @@ const allLinks = document.querySelectorAll('a');
 // document.querySelectorAll('span')[4].style.color = colors[4];
 // document.querySelectorAll('span')[5].style.color = colors[5];
 // document.querySelectorAll('span')[6].style.color = colors[6];
-h2.classList.add('border')
+// h2.classList.add('border')
+
+
+// const a = document.querySelectorAll('.highlight')[0];
+// a.classList.toggle('highlight');
+// const b = document.querySelectorAll('.highlight')[0];
+// b.classList.toggle('highlight');
+
+// const c = document.querySelectorAll('li')[3];
+// c.classList.add('highlight');
+// const d = document.querySelectorAll('li')[5];
+// d.classList.add('highlight');
+
+// const e = document.querySelectorAll('li')[2];
+// e.classList.add('highlight');
+
+
+for(let i=0; i<100; i++){
+    const newB = document.createElement('button');
+    newB.innerText = 'Hey!';
+    const collector = document.body.appendChild(newB);
+
+    const divi = document.querySelector('div');
+    divi.appendChild(newB)
+}
