@@ -41,12 +41,25 @@ const allLinks = document.querySelectorAll('a');
 // const e = document.querySelectorAll('li')[2];
 // e.classList.add('highlight');
 
-
-for(let i=0; i<100; i++){
+// This one to create new elements method //
+for (let i = 0; i < 100; i++) {
     const newB = document.createElement('button');
     newB.innerText = 'Hey!';
     const collector = document.body.appendChild(newB);
 
+    // so to appended you need to select the content you're trying to append to the child of, like displayed here.
     const divi = document.querySelector('div');
     divi.appendChild(newB)
 }
+// here we are deleting element
+// the li is the first element in the list we want to delete
+const firstLi = document.querySelector('li');
+const ul = firstLi.parentElement;
+ul.removeChild(firstLi)
+
+// or you can remove it in one line by selecting first then this:
+// firstLi.parentElement.removeChild(firstLi) <---this works on all browsers.
+// or you can directly just do:
+// firstLi.remove()  <--- this is better but doesnt work on explorer kmt.
+
+
