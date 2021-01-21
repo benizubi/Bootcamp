@@ -15,7 +15,7 @@ document.querySelector('button').addEventListener('click', (anything) => {
 //     console.log("KEYUP");
 // })
 // here below we're basically setting only these keys to work when pressed and anything else will get ignored. Good for games
-window.addEventListener('keydown', () => {
+window.addEventListener('keydown', (e) => {
     switch (e.code) {
         case 'ArrowUp':
             console.log("UP!")
