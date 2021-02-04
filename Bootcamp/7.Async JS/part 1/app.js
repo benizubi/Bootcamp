@@ -11,3 +11,19 @@ const isRightTrinagle = (a, b, c) => {
 isRightTrinagle(3, 5, 6)
 // so here thee stack is first going to figure out the solution for a then b then c
 // so for square it still stac kthe square  value, then mulitply be done an order to return the value, then off muliply of the stack, then tak square of the stack, then same thing for all and will return true or false
+
+
+// WebAPIs & Single Threaded //
+// browsers come with Apis that are able to handle cetain taks in the background, like making requests or setTimeOut
+// At any given point in time, that single js thread is running at most one line of js code.
+console.log("Sending request to server");
+setTimeout(function () {
+    console.log('Here is your data from the server...')
+}, 3000)
+// so if i ran this code, the first console will be printed then then last one then the 2 second because it takes 3 sec before displaying
+// but instead of waiting for value to display, the api moved directly to the next line
+console.log('Done now')
+
+// Call Backs//
+
+
