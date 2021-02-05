@@ -25,5 +25,27 @@ setTimeout(function () {
 console.log('Done now')
 
 // Call Backs//
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'red';
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = 'blue';
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = 'yellow';
+//         }, 2000)
+//     }, 2000)
+// }, 1000)
+// here i have done nested timeout call backs so first display red then yellow
+// rewtritting as a function for mulitple purposesp.
+const delayingColors = (newColor, delay, doNext) => {
+    setTimeout(() => {
+        document.body.style.backgroundColor = newColor;
+        doNext && doNext();
+    }, delay)
+}
+delayingColors('red', 3000, () => {
+    delayingColors('orange', 1000, () => {
+        delayingColors('blue', 1000, () => {
 
-
+        })
+    })
+})
