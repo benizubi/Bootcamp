@@ -50,8 +50,26 @@ delayingColors('red', 3000, () => {
         })
     })
 })
-// even tho you can, but nesting like done above is bad. But you will often see the type of esting like listed below
 
+// even tho you can, but nesting like done above is bad. But you will often see the type of esting like listed below
+// -----------------------------------------------------------------------------------------------------------
+// rewritting delayedColorChange using prmises which condences it all without needing to nest things :
+const delayingColors = (color, delay) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            document.body.style.backgroundColor = color;
+            resolve();
+        })
+    })
+}
+delayingColors('red', 1000)
+    .then(() => delayingColors('blue', 1000))
+    .then(() => delayingColors('red', 1000))
+    .then(() => delayingColors('green', 1000))
+    .then(() => delayingColors('black', 1000))
+// this is much easier to read and clean the code like this because of using promiseses
+// also here we only want a success no fail hence why no catch 
+// ---------------------------------------------------------
 searchMovieAPI('amadeus', () => {
     saveToMyDB(movies, () => {
         // if it works, run this:
