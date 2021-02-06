@@ -25,6 +25,7 @@ setTimeout(function () {
 console.log('Done now')
 
 // Call Backs//
+// is used to delay coding execution
 // setTimeout(() => {
 //     document.body.style.backgroundColor = 'red';
 //     setTimeout(() => {
@@ -49,3 +50,18 @@ delayingColors('red', 3000, () => {
         })
     })
 })
+// even tho you can, but nesting like done above is bad. But you will often see the type of esting like listed below
+
+searchMovieAPI('amadeus', () => {
+    saveToMyDB(movies, () => {
+        // if it works, run this:
+    }, () => {
+        // if it doesnt work, run this:
+    }, () => {
+        // if API is down, or requested failed
+    })
+})
+
+
+// Enter Promises //
+// A primise is an object representing the eventual completion or failure of an asynchronous operation.
