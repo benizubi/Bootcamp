@@ -33,3 +33,5 @@ const data = { "firstName": "John", "lastName": "Doe" }
                                      // headers//
 // Headers is basically the content type so for eg. content-type =  application/json 
 // So content type is the header
+// and also the header refer to the first starting part of a url link
+
