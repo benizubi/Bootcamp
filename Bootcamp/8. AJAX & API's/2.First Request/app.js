@@ -1,4 +1,4 @@
-// XMLHttpRequest//XHR
+// XMLHttpRequest//XHR DON'T RECOMMEND
 // this was the og way of sending request via js, but doesnt suport promises so loads of callbacks!
 const req = new XMLHttpRequest();
 
