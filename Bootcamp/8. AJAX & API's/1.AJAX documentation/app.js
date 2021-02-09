@@ -32,6 +32,7 @@ const data = { "firstName": "John", "lastName": "Doe" }
 // ?q= is what you will need to focus on something so for the search one it will be like '?q=food so the food is going to look for food 
                                      // headers//
 // Headers is basically the content type so for eg. content-type =  application/json 
+// The header key = Accept  and the value = application/json         
 // So content type is the header
 // and also the header refer to the first starting part of a url link
 
