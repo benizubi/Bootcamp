@@ -18,7 +18,7 @@ tweetForm.addEventListener('submit', function (e) {
     // here we're instead of grabbing the values of what we store from the input, we saved them as a variable so we can pass on to addedtweet below
 
     addTweet(usernameInput.value, tweetInput.value);
-    // here we passing the added tweqet values to display
+    // here we passing the added tweet values to display
     usernameInput.value = '';
     tweetInput.value = '';
 });
@@ -35,7 +35,8 @@ const addTweet = (username, tweet) => {
 }
 
 tweetsContainer.addEventListener('click', (e) => {
-    e.target.nodeName === 'LI' && e.target.remove();
+    // e.target.nodeName === 'LI' && e.target.remove();
+    console.dir(e)
     // so the LI specificially checks for list element, if we wanted to remove everything from the parent element we can just use  e.target.remove(); instead
     // so here we're checking on the node name to see if noeName  matches li using console.dir(e.target)
     // the target checks if its of type li and then remove does remove it if clicked 
