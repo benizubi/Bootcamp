@@ -78,6 +78,7 @@ class Color {
         this.g = g;
         this.b = b;
         this.colorName = colorName;
+        // this refers to these individual objects 
     }
     innerRGB() {
         const { r, g, b } = this;
@@ -100,4 +101,4 @@ class Color {
 }
 const c1 = new Color(255, 67, 89, 'tomato')
 const c2 = new Color(255, 255, 255, 'white');
-
+"hsl(130,1%,40%)"
