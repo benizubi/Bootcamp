@@ -51,19 +51,18 @@ app.get('/cats', (request, response) => {
 app.get('/dogs', (request, response) => {
     response.send('WOOF!')
 })
-
 app.get('*', (req, res) => {
     res.send(`I don't know that path!`)
 })
 // this * is for all and should only be added on the bottom if i place this at the top, the send response will be ignored 
 // here we're printing that if the path is not the one we listed.
-app.listen(8080, () => {
-    console.log("listening on port 8080!")
-})
-
 
 // working with Query Strings //
 app.get('/search', (request, response) => {
     console.log(request.query)
     response.send('HI!')
+})
+
+app.listen(8080, () => {
+    console.log("listening on port 8080!")
 })
