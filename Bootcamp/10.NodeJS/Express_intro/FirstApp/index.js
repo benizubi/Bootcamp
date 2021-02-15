@@ -25,7 +25,7 @@ const app = express();
 //     // response.send is going to actually generate and sends a request 
 // })
 app.get('/', (request, response) => {
-    response.send('Welcome Home boy!')
+    response.send('Welcome to the Home page!')
 })
 app.get('/r/:subreddit', (request, response) => {
     const { subreddit } = request.params;
@@ -51,17 +51,29 @@ app.get('/cats', (request, response) => {
 app.get('/dogs', (request, response) => {
     response.send('WOOF!')
 })
+
+// working with Query Strings //
+app.get('/search', (request, response) => {
+    const { q } = request.query;
+    // created an object key for q
+    // here we're assuming ther'es going to be a query string called q that's going to respond with the  code below
+    // http://localhost:8080/search?q=cat  also when i use this code and replace car for food it will print food because we've set it to look for food instead of cat.
+    if (!q) {
+        response.send('Nothinf found if nothing searched')
+
+    } else {
+        response.send(`<h1>Search Results for:${q}`)
+    }
+})
+
+
+
 app.get('*', (req, res) => {
     res.send(`I don't know that path!`)
 })
 // this * is for all and should only be added on the bottom if i place this at the top, the send response will be ignored 
 // here we're printing that if the path is not the one we listed.
 
-// working with Query Strings //
-app.get('/search', (request, response) => {
-    console.log(request.query)
-    response.send('HI!')
-})
 
 app.listen(8080, () => {
     console.log("listening on port 8080!")
