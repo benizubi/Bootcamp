@@ -2,7 +2,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-// the path
 
 
 app.set('view engine', 'ejs');
@@ -23,8 +22,19 @@ app.get('/', (request, response) => {
     // otherwise it will return error message on the browser, although the server will still run
     // in order to run it outside of the correct directory, we can use path 
 })
+app.get('/r/:subreddit', (request, response) => {
+    // here we're passing over the subreddit from the params
+    const { subreddit } = request.params;
+    response.render('subreddit', { subreddit })
+    // subreddit is the key we're passing its value to be returned to the web but before it passes it, it checks for the value of subreddit then passed through the ejs
+})
 
-
+app.get('/rand', (require, res) => {
+    const num = Math.floor(Math.random() * 10) + 1;
+    res.render('random', { randomguy: num })
+    // here we passing the second argument so that the random number we made can then be passed on to be rendered 
+    // randomguy ha been defined on the ejs file and here we just calling it.
+})
 
 app.listen(3000, () => {
     console.log("LISTENING ON PORT 3000")
