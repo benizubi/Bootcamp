@@ -10,6 +10,11 @@ app.set('view engine', 'ejs');
 // and it has been installed in the node_modules folder for us to use
 // also downloaded the view folder with the ejs file
 
+
+app.set('views', path.join(__dirname, '/views'))
+// path.join takes multiple segments and joins them together into a single path 
+// instead of running the code from the right directory, here we say instead run the file from where the index.js file directory is instead 
+
 app.get('/', (request, response) => {
     response.render('home.ejs')
     // instead of the send method, we're using rendor here and it allows us to atach a ejs file to read on the browser
@@ -17,9 +22,6 @@ app.get('/', (request, response) => {
     // an order for the ejs file to run, on the terminal you can only run it from the correct directory so that the it can detect the views folder 
     // otherwise it will return error message on the browser, although the server will still run
     // in order to run it outside of the correct directory, we can use path 
-    app.set('views', path.join(__dirname, '/views'))
-    // path.join takes multiple segments and joins them together into a single path 
-    // instead of running the code from the right directory, here we say instead run the file from where the index.js file directory is instead 
 })
 
 
