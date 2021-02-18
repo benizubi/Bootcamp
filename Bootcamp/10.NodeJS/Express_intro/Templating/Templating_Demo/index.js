@@ -1,4 +1,5 @@
 // Express 
+const { response } = require('express');
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -21,6 +22,12 @@ app.get('/', (request, response) => {
     // an order for the ejs file to run, on the terminal you can only run it from the correct directory so that the it can detect the views folder 
     // otherwise it will return error message on the browser, although the server will still run
     // in order to run it outside of the correct directory, we can use path 
+})
+
+app.get('/cats', (request, response) => {
+    const cats = ['Blue', 'Rocket', 'Monty', 'Stephanie', 'Winston']
+    // here we're pretending these values are coming from an array. 
+    response.render('cats', { cats })
 })
 app.get('/r/:subreddit', (request, response) => {
     // here we're passing over the subreddit from the params
