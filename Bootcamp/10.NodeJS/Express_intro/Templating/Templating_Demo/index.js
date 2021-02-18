@@ -33,8 +33,11 @@ app.get('/cats', (request, response) => {
 app.get('/r/:subreddit', (request, response) => {
     // here we're passing over the subreddit from the params
     const { subreddit } = request.params;
-    response.render('subreddit', { subreddit })
+    const data = redditData[subreddit]
+    console.log(data)
+    response.render('subreddit', { ...data })
     // subreddit is the key we're passing its value to be returned to the web but before it passes it, it checks for the value of subreddit then passed through the ejs
+
 })
 
 app.get('/rand', (require, res) => {
