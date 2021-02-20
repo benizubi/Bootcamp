@@ -1,6 +1,6 @@
 <%- include('partials/head') %>
+    <%- include('partials/navbar') %>
 
-    <body>
         <h1>All The Cats</h1>
         <ul>
             <% for(let cat of cats){ %>
@@ -10,6 +10,5 @@
                 <% } %>
                     <!-- here we're displaying the array content prenting its coming from a database for us to display -->
         </ul>
-    </body>
 
-    </html>
+        <%- include('partials/footer') %>

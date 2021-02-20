@@ -1,6 +1,7 @@
 <%- include('partials/head') %>
 
-    <body>
+    <%- include('partials/navbar') %>
+
         <h1> Your random number is:
             <!-- here randomguy rends evaluated as javascript -->
             <%= randomguy %>
@@ -14,6 +15,5 @@
                     <!-- naoter way of doing the same thing as above will be -->
                     <h3>That NUMBER IS:<%= randomguy%2===0 ?'EVEN' : 'ODD' %>
                     </h3>
-    </body>
 
-    </html>
+                    <%- include('partials/footer') %>

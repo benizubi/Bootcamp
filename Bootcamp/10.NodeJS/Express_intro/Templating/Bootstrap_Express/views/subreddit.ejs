@@ -1,61 +1,20 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
+<%- include('partials/head')%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-  
-</head>
-instead of copying the script and link to all pages to display nav bar, instead I'm gonna create a folder called partials to enable that.
--->
-<%- include('partials/head') %>
-    <!-- this include ejs allows us to pass the partial directory that contains the head of the page. instead of doing it liek above for every page -->
+    <!-- the include allows me to include partials directory content on each page. -->
+    <%- include('partials/navbar') %>
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/rand">Random Number</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/r/chickens">Chickens</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/r/soccer">Soccer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/r/mightyharvest">Mnighty Harvest</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <div class="container">
             <h1>Browsing The <%= name %> subreddit </h1>
             <h2>
                 <%= description %>
+                <!-- the ejs above on descriptions reads it like a js -->
             </h2>
             <p>
                 <%= subscribers %> Total subscribers
             </p>
             <hr>
             <% for (let post of posts){ %>
+                <!-- the ejs here allow us to write js but it runs behind the scene -->
                 <article>
                     <p>
                         <%= post.title %> - <b>
@@ -70,6 +29,5 @@ instead of copying the script and link to all pages to display nav bar, instead 
                 </article>
                 <% } %>
         </div>
-    </body>
-
-    </html>
+        <%- include('partials/footer') %>
+        <!-- this ejs allows us to read it as a hmtl  -->
