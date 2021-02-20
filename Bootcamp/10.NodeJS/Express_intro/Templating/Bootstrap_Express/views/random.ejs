@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random</title>
-</head>
+    <body>
+        <h1> Your random number is:
+            <!-- here randomguy rends evaluated as javascript -->
+            <%= randomguy %>
+        </h1>
+        <!-- the less than and % doesn't run as js or wont display, however, it allow us to the js markup and evaluates and only runs the h2 lines  -->
+        <% if(randomguy %2===0) { %>
+            <h2>That's an even number!</h2>
+            <% }else { %>
+                <h2>That's an odd number</h2>
+                <% } %>
+                    <!-- naoter way of doing the same thing as above will be -->
+                    <h3>That NUMBER IS:<%= randomguy%2===0 ?'EVEN' : 'ODD' %>
+                    </h3>
+    </body>
 
-<body>
-    <h1> Your random number is:
-        <!-- here randomguy rends evaluated as javascript -->
-        <%= randomguy %>
-    </h1>
-    <!-- the less than and % doesn't run as js or wont display, however, it allow us to the js markup and evaluates and only runs the h2 lines  -->
-    <% if(randomguy %2===0) { %>
-        <h2>That's an even number!</h2>
-        <% }else { %>
-            <h2>That's an odd number</h2>
-            <% } %>
-                <!-- naoter way of doing the same thing as above will be -->
-                <h3>That NUMBER IS:<%= randomguy%2===0 ?'EVEN' : 'ODD' %>
-                </h3>
-</body>
-
-</html>
+    </html>
