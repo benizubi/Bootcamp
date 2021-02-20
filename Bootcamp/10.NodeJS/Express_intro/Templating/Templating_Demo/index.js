@@ -5,11 +5,19 @@ const app = express();
 const path = require('path');
 const redditData = require('./data.json');
 
+// app.use(express.static('public'))
+// app.use(express.static('css'))
+// app.use(express.static('js'))
+// I'm using public for all directory static serve, otherwise, i could of specified like done for jss and css
+// the static allow us to do all the js and css stylingto display on the page from the public folder. 
+app.use(express.static(path.join(__dirname, 'public')))
+// the path join, allows me to access the stylesheet outside of where this file is located
 
 app.set('view engine', 'ejs');
 // the set always have two arguments and i downloaded the npm i ejs through terminal
 // and it has been installed in the node_modules folder for us to use
 // also downloaded the view folder with the ejs file
+
 
 
 app.set('views', path.join(__dirname, '/views'))
