@@ -1,6 +1,4 @@
-const { response } = require('express');
 const express = require('express');
-const { request } = require('http');
 const app = express();
 const path = require('path');
 // path prvides utilities for working with file and directories path.
@@ -9,7 +7,7 @@ const path = require('path');
 app.use(express.urlencoded({ extended: true }))
 // this is a way of running some code on every single request
 // especially for form data, it allows us to parse the text form data and decodes it. won't work for json and other types
-app.use(express.json)
+app.use(express.json())
 // this allows us to parse and decodes json data
 app.set('views', path.join(__dirname, 'views'))
 // the path join allows us access to view directory 
@@ -39,8 +37,13 @@ const comments = [
 ];
 app.get('/comments', (request, response) => {
     response.render('comments/index', { comments })
+    // here we're passing on the array object of comments to display 
+    // the /comment is used to display all comments
 })
-
+// here we're about to create new comments
+app.get('/comments/new', (request, responde) => {
+    responde.render('comments/new')
+})
 
 // we need this everytime we use ejs and i'll create the view directory for it
 app.get('/tacos', (request, response) => {
@@ -52,6 +55,6 @@ app.post('/tacos', (req, res) => {
     // these key objects are the names of the input fields
     res.send(`okay, here are your ${qty} ${meat}`)
 })
-app.listen(8000, () => {
-    console.log("Running man located at port 8000!")
+app.listen(3000, () => {
+    console.log("Running man located at port 3000!")
 })
