@@ -10,13 +10,19 @@
 
 <body>
     <h1>Make new Tweet</h1>
-    <form action="">
-        <label for="user">Enter Username</label>
-        <input type="text" name="username" id="user" placeholder="username">
-        <br>
-        <label for="c">Enter Tweet</label>
-        <textarea name="comment" id="c" cols="30" rows="10"></textarea>
+    <form action="/comments" method="post">
+        <!-- when posting to the server we need to set action of where its going and method used so here we used post. the default method is get  -->
+        <section>
+            <label for="user">Enter Username</label>
+            <input type="text" name="username" id="user" placeholder="username">
+        </section>
+        <section>
+            <label for="c">Enter new Tweet</label>
+            <textarea id="c" cols="30" rows="5" placeholder="Enter tweet" name="comment"></textarea>
+        </section>
+        <button>Submit Tweet</button>
     </form>
+    <a href="/comments">Back To New Tweet</a>
 </body>
 
 </html>

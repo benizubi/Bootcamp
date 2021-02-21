@@ -44,6 +44,17 @@ app.get('/comments', (request, response) => {
 app.get('/comments/new', (request, responde) => {
     responde.render('comments/new')
 })
+// here we're posting the tweet once you press submit, this is where it will create new comment on the server 
+app.post('/comments', (req, res) => {
+    const { username, comment } = req.body;
+    comments.push({ username, comment })
+    res.redirect('/comments');
+    // so after submiting our form, the page will redirect us to the comment page 
+    // redirect makes a new  get request to the browsers so it can redirect us to a different page.
+})
+
+
+
 
 // we need this everytime we use ejs and i'll create the view directory for it
 app.get('/tacos', (request, response) => {
