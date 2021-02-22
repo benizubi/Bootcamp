@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 // path prvides utilities for working with file and directories path.
+const { v4: uuid } = require('uuid');
+uuid();
+// this has been npm i uuid for unique universal id 
 
 
 app.use(express.urlencoded({ extended: true }))
@@ -15,27 +18,27 @@ app.set('view engine', 'ejs')
 
 const comments = [
     {
-        id: 1,
+        id: uuid(),
         username: 'Beni',
         comment: 'Lol, you kind of funny you know.'
 
     },
     {
 
-        id: 2,
+        id: uuid(),
         username: 'Exaucee',
         comment: 'Lol, you kind of funny exaucee.'
 
     },
     {
 
-        id: 3,
+        id: uuid(),
         username: 'Aaron',
         comment: 'Lol, you kind of funny aaron.'
 
     },
     {
-        id: 4,
+        id: uuid(),
         username: 'Eben',
         comment: 'Lol, you kind of funny eben.'
 
@@ -53,7 +56,7 @@ app.get('/comments/new', (request, responde) => {
 // here we're posting the tweet once you press submit, this is where it will create new comment on the server 
 app.post('/comments', (req, res) => {
     const { username, comment } = req.body;
-    comments.push({ username, comment })
+    comments.push({ username, comment, id: uuid() })
     res.redirect('/comments');
     // so after submiting our form, the page will redirect us to the comment page 
     // redirect makes a new  get request to the browsers so it can redirect us to a different page.
@@ -65,9 +68,8 @@ app.post('/comments', (req, res) => {
 app.get('/comments/:id', (req, res) => {
     const { id } = req.params;
     // this allow us to take the id from the url to request a specific single item as each element will have diff  id number 
-    // created a function to find the id and changed it to an interger from a string
-    // id from params returns as a string 
-    const comment = comments.find(c => c.id === parseInt(id));
+    const comment = comments.find(c => c.id === id);
+    // finds give you the first element in the array
     res.render('comments/show', { comment })
 
 })

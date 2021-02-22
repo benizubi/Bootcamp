@@ -16,7 +16,8 @@
                 <%= c.username %> - <b>
                         <%= c.comment %>
                     </b>
-
+                    <a href="/comments/<%= c.id %>">Details</a>
+                    <!-- by clicking its allowing us to go to comment/id  for all of them to be listed and when clicked it'll take us to the specific id-->
             </li>
             <% } %>
     </ul>
