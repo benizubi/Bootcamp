@@ -15,21 +15,27 @@ app.set('view engine', 'ejs')
 
 const comments = [
     {
+        id: 1,
         username: 'Beni',
         comment: 'Lol, you kind of funny you know.'
 
     },
     {
+
+        id: 2,
         username: 'Exaucee',
         comment: 'Lol, you kind of funny exaucee.'
 
     },
     {
+
+        id: 3,
         username: 'Aaron',
         comment: 'Lol, you kind of funny aaron.'
 
     },
     {
+        id: 4,
         username: 'Eben',
         comment: 'Lol, you kind of funny eben.'
 
@@ -55,6 +61,16 @@ app.post('/comments', (req, res) => {
 
 
 
+// Find/select/show page to display
+app.get('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    // this allow us to take the id from the url to request a specific single item as each element will have diff  id number 
+    // created a function to find the id and changed it to an interger from a string
+    // id from params returns as a string 
+    const comment = comments.find(c => c.id === parseInt(id));
+    res.render('comments/show', { comment })
+
+})
 
 // we need this everytime we use ejs and i'll create the view directory for it
 app.get('/tacos', (request, response) => {
