@@ -73,6 +73,18 @@ app.get('/comments/:id', (req, res) => {
     res.render('comments/show', { comment })
 
 })
+// patch allows us to partial change the content, whilst put changed the entire thing and replaces it with the new thing.
+app.patch('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    const  newCommentText = req.body.comment;
+    const findComment = comments.find(c => c.id === id);
+    findComment.comment = newCommentText;
+    res.redirect('/comments')
+// so first we requested the id so we can find the comment using id 
+// then the newcommenttext is requesting a comment on the page body
+// then we've updated the comment by setting comment to be a new comment
+// then we're redirected to index
+})
 
 // we need this everytime we use ejs and i'll create the view directory for it
 app.get('/tacos', (request, response) => {
