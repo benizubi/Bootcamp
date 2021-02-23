@@ -19,7 +19,7 @@ app.set('views', path.join(__dirname, 'views'))
 // the path join allows us access to view directory 
 app.set('view engine', 'ejs')
 
-const comments = [
+let comments = [
     {
         id: uuid(),
         username: 'Beni',
@@ -75,11 +75,11 @@ app.get('/comments/:id', (req, res) => {
     // finds give you the first element in the array
     res.render('comments/show', { comment })
 })
-
+// patch/ editing a specific tweet using id
 app.get('/comments/:id/edit', (req, res) => {
     const { id } = req.params;
     const comment = comments.find(c => c.id === id);
-    res.render('comments/edit',{comment})
+    res.render('comments/edit', { comment })
 })
 
 // patch allows us to partial change the content, whilst put changed the entire thing and replaces it with the new thing.
@@ -93,6 +93,14 @@ app.patch('/comments/:id', (req, res) => {
     // then the newcommenttext is requesting a comment on the page body
     // then we've updated the comment by setting comment to be a new comment
     // then we're redirected to index
+})
+
+// delete // deleting speciic item on the server 
+app.delete('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    comments = comments.filter(c => c.id !== id)
+    res.redirect('/comments')
+    // filter is a boolean method that returns a new array
 })
 
 // we need this everytime we use ejs and i'll create the view directory for it

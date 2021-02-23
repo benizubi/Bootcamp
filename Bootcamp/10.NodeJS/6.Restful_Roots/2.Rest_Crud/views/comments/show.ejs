@@ -16,6 +16,11 @@
     </h2>
     <a href="/comments">Back to index</a>
     <a href="/comments/<%= comment.id %>/edit">Click to Edit</a>
+    <!-- deletes by overrind it -->
+    <form method="POST" action="/comments/<%= comment.id %>?_method=DELETE ">
+        <br>
+        <BUtton>DELETE</BUtton>
+    </form>
 </body>
 
 </html>
