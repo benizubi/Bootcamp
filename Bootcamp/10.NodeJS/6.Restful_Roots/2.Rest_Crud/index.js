@@ -5,8 +5,11 @@ const path = require('path');
 const { v4: uuid } = require('uuid');
 uuid();
 // this has been npm i uuid for unique universal id 
+const methodOverride = require('method-override');
 
 
+app.use(methodOverride('_method'))
+// methodoverride allow us to use post and delete in prohibited places 
 app.use(express.urlencoded({ extended: true }))
 // this is a way of running some code on every single request
 // especially for form data, it allows us to parse the text form data and decodes it. won't work for json and other types

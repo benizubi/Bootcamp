@@ -10,13 +10,14 @@
 
 <body>
     <h1>Edit</h1>
- <form action="/comments">
-    <textarea name="comment" id="" cols="30" rows="5">
+    <form method="post" action="/comments/<%= comment.id %>/edit?_method=PATCH ">
+        <textarea name="comment" id="" cols="40" rows="10">
         <%= comment.comment %> 
-        <!-- here we're basically collecting the comment in the textfield so we can edit it -->
     </textarea>
-    <button>Submit</button>
- </form>
+        <button>Submit</button>
+    </form>
+    <!-- here we're basically collecting the comment in the textfield so we can edit it -->
+
 </body>
 
 </html>
