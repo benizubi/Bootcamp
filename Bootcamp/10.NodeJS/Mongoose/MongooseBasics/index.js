@@ -30,3 +30,11 @@ const Amadeus = new Movie({ title: 'Amadeus', year: 1986, score: 9.2, rating: 'R
 
 const blah = new Movie({ title: 'Amadeus', year: 1986, score: 9.2, rating: 'R' })
 blah.save()
+
+Movie.insertMany([
+    { title: 'Beni', year: 1986, score: 9.2, rating: 'R' },
+
+    { title: 'Alex', year: 1986, score: 9.2, rating: 'R' },
+
+    { title: 'The Iron Giant', year: 1986, score: 9.2, rating: 'R' }
+])
