@@ -24,5 +24,9 @@ const Movie = mongoose.model('Movie', movieSchema);
 // now  after we've have created a collection called movies, then we can use movie to add things into our databse, like down below by calling new movies and passing on data.
 // so amadeus is accessible through node and it will return the values in this, however it's not yet saved to mongodb 
 // to save to Amadeus, in node you will have to call Amadeous.save() and that will store it in the db
-// then 'use movieApp ' to switch to db movieapp and 
+// then 'use movieApp ' to switch to db movieapp and can be accessed through db.movies.find()
+// save has to be called everytime we make changes in no
 const Amadeus = new Movie({ title: 'Amadeus', year: 1986, score: 9.2, rating: 'R' })
+
+const blah = new Movie({ title: 'Amadeus', year: 1986, score: 9.2, rating: 'R' })
+blah.save()
