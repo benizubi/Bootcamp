@@ -38,11 +38,13 @@ Movie.insertMany([
     { title: 'Moonsire Kingdom', year: 2018, score: 9.2, rating: 'R' }
 
     // uploading data like this takes time, so its always good to use callbacks to make sure it worked
-    // so here we're returning if everything works fine
+    // so here we're returning if everything works fine.
+    // .load index.js on this project directory in node will return all these with unique id numbers asigned to each.
 ])
-
     .then(data => {
         console.log("It Worked")
         console.log(data);
     })
 // Find with mongoose
+Movie.find({}).then(m => console.log(m));
+applicationCache.get('/movies/:id')
