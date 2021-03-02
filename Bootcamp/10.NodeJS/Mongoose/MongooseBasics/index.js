@@ -48,3 +48,7 @@ Movie.insertMany([
 // Find with mongoose
 Movie.find({}).then(m => console.log(m));
 applicationCache.get('/movies/:id')
+
+await Movie.findById(id).exec();
+Movie.findById(id, function (err, movie) { });
+await Movie.findById(id, 'name length').exec();
