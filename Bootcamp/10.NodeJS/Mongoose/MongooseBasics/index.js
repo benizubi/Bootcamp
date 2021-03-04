@@ -46,3 +46,21 @@ Movie.insertMany([
         console.log(data);
     })
 // Find with mongoose
+// Mongoose Scehma validations
+const productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    }
+});
+const Product = mongoose.model('Product', productSchema);
+const bike = new Product({ name: 'Mountain Bike', price: '599', color: 'red' })
+bike.save()
+    .then(data => {
+        console.log("It Worked")
+        console.log(data);
+    })
+    .catch(err => {
+        console.log(log("OHno error!!!"))
+        console.log(err)
+    })
