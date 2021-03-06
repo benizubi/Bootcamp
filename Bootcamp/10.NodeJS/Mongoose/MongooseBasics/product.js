@@ -92,6 +92,7 @@ const productSchema = new mongoose.Schema({
 
 // Model instance methods //
 // the greet method can be used in node to display this function everytime we call it.
+// Also we're using the function () instead of the => because it binds and prevents us from using ' .this' when using the arrow.
 productSchema.methods.greet = function () {
     console.log("OH HI THERE!")
     // the value of this will change if we use arrow function, whereas using the function returns a partucular instance method for a product, but if we use an arroa function we wont have that value.
@@ -113,7 +114,7 @@ productSchema.methods.addCategories = function (newcat) {
 
 }
 
-const Product = mongoose.model('Product', productSchema);
+// const Product = mongoose.model('Product', productSchema);
 
 const findProduct = async () => {
     const foundProduct = await Product.findOne({ name: 'Bike Helemt' })
@@ -132,7 +133,19 @@ const findProduct = async () => {
     // The await method is used along on async methods and it allow us to wait until its finished executing before being succesfull or returning an error before moving on.
 
 }
-findProduct();
+// findProduct();
 
 // so here we've basically created a find object to find one thing and also console log to find one product and then print the greeting message from the greeting function. the greeting used here is greet, but we can name it anything we wantand everytime we call it, it will load the message up
 // Everytime we call greet, it will always print out what's listed in the greet block.
+
+// Adding Model statics methods //
+// This updates all product with a price of 0
+
+productSchema.statics.fireSale = function () {
+    return this.updateMany({}, { onSale: true, price: 0 })
+}
+// this models code always has to be in the middle  like here hence why i keep repeating it everywhere.
+const Product = mongoose.model('Product', productSchema);
+
+// this updates all of them and return us with the how many things got modified. 
+Product.fireSale().then(res => console.log(res))
