@@ -52,19 +52,20 @@ const productSchema = new mongoose.Schema({
     // if we were to add on more new things that's not been set up here, it will not return an error, but it will  not store it in the database
 
 })
-const Product = mongoose.model('Product', productSchema);
 
-const bike = new Product({ name: 'Bike Helmet', price: 599, categories: ['Cycling'], size: 'M' });
-bike.save()
-    // this stores it to the mongo db by calling save
-    .then(() => {
-        console.log("It worked!")
-        // usually our code can go here, but we don't need to nest all our code here 
-    })
-    .catch(err => {
-        console.log(log("OHno error!!!"))
-        console.log(err)
-    })
+// const Product = mongoose.model('Product', productSchema);
+
+// const bike = new Product({ name: 'Bike Helmet', price: 599, categories: ['Cycling'], size: 'M' });
+// bike.save()
+//     // this stores it to the mongo db by calling save
+//     .then(() => {
+//         console.log("It worked!")
+//         // usually our code can go here, but we don't need to nest all our code here 
+//     })
+//     .catch(err => {
+//         console.log(log("OHno error!!!"))
+//         console.log(err)
+//     })
 
 //Validating Mongoose Updates //
 // Validations applies automatically when something is being created, but when updating like doing so here,
@@ -88,3 +89,50 @@ bike.save()
 //     required: true,
 //     min: [0, 'Error Try again, price must be positive']
 // },
+
+// Model instance methods //
+// the greet method can be used in node to display this function everytime we call it.
+productSchema.methods.greet = function () {
+    console.log("OH HI THERE!")
+    // the value of this will change if we use arrow function, whereas using the function returns a partucular instance method for a product, but if we use an arroa function we wont have that value.
+    console.log(`- from ${this.name}`)
+}
+
+// the ending here can be set to anything liek we used toggleOnSale
+productSchema.methods.toggleOnSale = function () {
+    this.onSale = !this.onSale;
+    // this means onsale = true because it was previously set to false and ! does the opposite. 
+    return this.save();
+}
+
+productSchema.methods.addCategories = function (newcat) {
+    this.categories.push(newcat);
+    // using push to add it to the array
+    return this.save();
+    // we always have to call the .save() an order to save this instance
+
+}
+
+const Product = mongoose.model('Product', productSchema);
+
+const findProduct = async () => {
+    const foundProduct = await Product.findOne({ name: 'Bike Helemt' })
+    foundProduct.greet();
+    // here printing out the product along with toggleonsale
+    console.log(foundProduct)
+    await foundProduct.toggleOnSale();
+    // every time we call save, its an async method that takes time to save so we can await it here
+    console.log(foundProduct)
+    // so here the first console returns the default product which was set to be false, then it awaits with the toggleonSale and now after we call it, it returns the true version because on toggle we've set it to be true
+
+    // here is where we push the data into the array so 'outdoors'  is what's being pushed. to create a new category called outdoors.
+    await foundProduct.addCategories('Outdoors')
+    console.log(foundProduct)
+
+    // The await method is used along on async methods and it allow us to wait until its finished executing before being succesfull or returning an error before moving on.
+
+}
+findProduct();
+
+// so here we've basically created a find object to find one thing and also console log to find one product and then print the greeting message from the greeting function. the greeting used here is greet, but we can name it anything we wantand everytime we call it, it will load the message up
+// Everytime we call greet, it will always print out what's listed in the greet block.
