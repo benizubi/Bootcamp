@@ -49,7 +49,7 @@ const productSchema = new mongoose.Schema({
 })
 const Product = mongoose.model('Product', productSchema);
 
-const bike = new Product({ name: 'Bike Helemt', price: 599, categories: ['Cycling', 'Safety'] });
+const bike = new Product({ name: 'Bike Helmet', price: 599, categories: ['Cycling', 'Safety'] });
 bike.save()
     // this stores it to the mongo db by calling save
     .then(() => {
@@ -61,3 +61,17 @@ bike.save()
         console.log(err)
     })
 
+//Validating Mongoose Updates //
+// Validations applies automatically when something is being created, but when updating like doing so here,
+// You need to use runvalidation if you want the validation to still be present.
+// otherwise if u don't include it the validations will be ignored when updating.
+Product.findOneAndUpdate({ name: 'Bike Helmet' }, { price: -10.99 }, { new: true, runValidators: true })
+
+    .then(data => {
+        console.log("It worked!")
+        console.log(data)
+    })
+    .catch(err => {
+        console.log(log("OHno error!!!"))
+        console.log(err)
+    })
