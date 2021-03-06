@@ -1,4 +1,3 @@
-// 1. Connecting with mongoose
 // we're connecting  to mongoDB and the default ports are 27017, 27018,27019 there's only up to 6 ports
 const mongoose = require('mongoose');
 // we're defining which database to use, here we're using movieApp database and if it doesnt exist, it will create one, or it will use it if it already exists.
@@ -12,6 +11,7 @@ mongoose.connect('mongodb://localhost:27017/shopApp', { useNewUrlParser: true, u
         console.log(log("OHno error!!!"))
         console.log(err)
     })
+
 // Mongoose Schema Validtions //
 const productSchema = new mongoose.Schema({
     name: {
@@ -22,7 +22,7 @@ const productSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: true,
-        min: 0
+        min: [0, 'Error Try again, price must be positive']
     },
     onSale: {
         type: Boolean,
@@ -38,6 +38,11 @@ const productSchema = new mongoose.Schema({
             type: Number,
             default: 0
             // the default is for the default number to start at that given number.
+        },
+        size: {
+            type: String,
+            enum: ['XS', 'S', 'M', 'L']
+            // for the enum error validation, this checks for all the listed item in the array, if anything not listed here is noted when creating, it will return an error message for instance if i  used XSS instead of the listed items.
         }
     }
     // all schema types like required, default, min, maxlength and others can be found on mongoosejs.com schema types.
@@ -49,7 +54,7 @@ const productSchema = new mongoose.Schema({
 })
 const Product = mongoose.model('Product', productSchema);
 
-const bike = new Product({ name: 'Bike Helmet', price: 599, categories: ['Cycling', 'Safety'] });
+const bike = new Product({ name: 'Bike Helmet', price: 599, categories: ['Cycling'], size: 'M' });
 bike.save()
     // this stores it to the mongo db by calling save
     .then(() => {
@@ -65,13 +70,21 @@ bike.save()
 // Validations applies automatically when something is being created, but when updating like doing so here,
 // You need to use runvalidation if you want the validation to still be present.
 // otherwise if u don't include it the validations will be ignored when updating.
-Product.findOneAndUpdate({ name: 'Bike Helmet' }, { price: -10.99 }, { new: true, runValidators: true })
+// Product.findOneAndUpdate({ name: 'Bike Helmet' }, { price: -10.99 }, { new: true, runValidators: true })
 
-    .then(data => {
-        console.log("It worked!")
-        console.log(data)
-    })
-    .catch(err => {
-        console.log(log("OHno error!!!"))
-        console.log(err)
-    })
+//     .then(data => {
+//         console.log("It worked!")
+//         console.log(data)
+//     })
+//     .catch(err => {
+//         console.log(log("OHno error!!!"))
+//         console.log(err)
+//     })
+
+// Mongoose Validation Error  //
+// if you're using objects and have an array listed like done on min, the first argument is for the min number and the second argument works as an error message like displayed for the price object.
+// price: {
+//     type: Number,
+//     required: true,
+//     min: [0, 'Error Try again, price must be positive']
+// },
