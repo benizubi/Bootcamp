@@ -1,4 +1,4 @@
-// we're connecting  to mongoDB and the default ports are 27017, 27018,27019 there's only up to 6 ports
+// 2 we're connecting  to mongoDB and the default ports are 27017, 27018,27019 there's only up to 6 ports
 const mongoose = require('mongoose');
 // we're defining which database to use, here we're using movieApp database and if it doesnt exist, it will create one, or it will use it if it already exists.
 mongoose.connect('mongodb://localhost:27017/shopApp', { useNewUrlParser: true, useUnifiedTopology: true })
