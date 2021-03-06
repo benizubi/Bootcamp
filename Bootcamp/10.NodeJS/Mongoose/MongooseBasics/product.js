@@ -16,13 +16,32 @@ mongoose.connect('mongodb://localhost:27017/shopApp', { useNewUrlParser: true, u
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        maxlength: 20
     },
     price: {
         type: Number,
-        required: true
+        required: true,
+        min: 0
+    },
+    onSale: {
+        type: Boolean,
+        default: false
+    },
+    categories: [String],
+    qty: {
+        online: {
+            type: Number,
+            default: 0
+        },
+        inStore: {
+            type: Number,
+            default: 0
+            // the default is for the default number to start at that given number.
+        }
     }
-    // The other schema methods automatically guesses the type because we ddin't set it, but nested objects here allow us to do such tasks. 
+    // all schema types like required, default, min, maxlength and others can be found on mongoosejs.com schema types.
+    // The other schema methods (used on index.js) automatically guesses the type because we ddin't set it, but nested objects here allow us to do such tasks. 
     // by doing this methods it creates a validation method because if i was to run this file without a name given, it will return an error because a name is required
     // Also if i use a string instead of number, it will also return an error because its requiring to have a number as it failed to retrive such info.
     // if we were to add on more new things that's not been set up here, it will not return an error, but it will  not store it in the database
@@ -30,8 +49,7 @@ const productSchema = new mongoose.Schema({
 })
 const Product = mongoose.model('Product', productSchema);
 
-const bike = new Product(
-    { price: 599 });
+const bike = new Product({ name: 'Bike Helemt', price: 599, categories: ['Cycling', 'Safety'] });
 bike.save()
     // this stores it to the mongo db by calling save
     .then(() => {
