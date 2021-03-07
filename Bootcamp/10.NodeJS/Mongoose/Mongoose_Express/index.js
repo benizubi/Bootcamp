@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 
 
-app.get('/dog', (req, res) => {
+app.get('/products', (req, res) => {
     res.send('WOOF');
 })
 
