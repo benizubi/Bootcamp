@@ -1,3 +1,4 @@
+// seeds is mainly only used to store information to the databse every time i run node seeds.js on terminal 
 const mongoose = require('mongoose');
 
 const Product = require('./models/product')
