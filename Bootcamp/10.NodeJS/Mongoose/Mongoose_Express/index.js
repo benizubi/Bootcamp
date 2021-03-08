@@ -22,8 +22,13 @@ app.set('view engine', 'ejs');
 
 
 
-app.get('/products', (req, res) => {
-    res.send('WOOF');
+app.get('/products', async (req, res) => {
+    const products = await Product.find({})
+    // .find to find and collects everything on the db
+    // console.log(products)
+    res.render('products/index', { products })
+    // here the second argument is where we pass the product object
+    // This is where all the product will be listed. When using methods like find, we use async and await the product, then we call it back again after. like we've called it back on the second argument to pass all products.
 })
 
 app.listen(3000, () => {
