@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
-
+const methodOverride = require('method-override');
 // here we're requring our product from the model folder
 const Product = require('./models/product')
 // the product here is what we're going to use everytime we want to list a product.name, product.id or anything. 
@@ -21,7 +21,8 @@ mongoose.connect('mongodb://localhost:27017/farmStand', { useNewUrlParser: true,
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
+app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 app.get('/products', async (req, res) => {
     const products = await Product.find({})
@@ -31,7 +32,21 @@ app.get('/products', async (req, res) => {
     // here the second argument is where we pass the product object
     // This is where all the product will be listed. When using methods like find, we use async and await the product, then we call it back again after. like we've called it back on the second argument to pass all products.
 })
-
+//Creating //
+app.get('/products/new', (req, res) => {
+    //    products is the folder name 
+    res.render('products/new')
+    // by rendering, it allow us to then use ejs  here for page 'new' to create a form.
+})
+// here is where we're creating a new product from the form and storing it on the db
+app.post('/products', async (req, res) => {
+    // here i have created a new product and requesting its content
+    const newProduct = new Product(req.body)
+    // an order for the new product to be saved we calll it back like done here.
+    await newProduct.save();
+    // redirecting the page so we can 
+    res.redirect(`/products/${newProduct._id}`)
+})
 app.get('/products/:id', async (req, res) => {
     // req.params is requesting the params for this id
     const { id } = req.params;
@@ -42,6 +57,21 @@ app.get('/products/:id', async (req, res) => {
     // thus, the const name we set on here is then used to find things by id to allocate what we're after. 
 })
 
+// updating products //
+app.get('/products/:id/edit', async (req, res) => {
+    //    products is the folder name 
+    const { id } = req.params;
+    const product = await Product.findById(id)
+    res.render('products/edit', { product })
+    // by rendering, it allow us to then use ejs  here for page 'edit' to create a form.
+})
+app.put('/products/:id', async (req, res) => {
+    // const { id } = req.params;
+    // const product = await Product.findByIdAndUpdate(id, req.body, { runValidators: true, new: true });
+    // res.redirect(`/products/${product._id}`)
+    console.log(re.body)
+    res.send('put!!')
+})
 app.listen(3000, () => {
     console.log("App is listening on port 3000")
 })

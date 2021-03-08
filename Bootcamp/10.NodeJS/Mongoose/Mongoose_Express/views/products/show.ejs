@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= foundProductId.name %>
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= foundProductId.name %>
+    </h1>
+    <u>
+        <li> Price: £ <%= foundProductId.price %>
+        </li>
+        <li> Category: <%= foundProductId.category %>
+        </li>
+    </u>
+    <a href="/products/">All Products</a>
+    <a href="/products/<%=foundProductId._id%>/edit "> Edit Product</a>
+    <!-- by rendering foundProductId, it allows us to use it here to display what's in the db. -->
+</body>
+
+</html>
