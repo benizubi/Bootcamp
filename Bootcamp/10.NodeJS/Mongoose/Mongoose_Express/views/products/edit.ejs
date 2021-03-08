@@ -19,6 +19,7 @@
         <select name="category" id="cat">
             <% for(let category of categories) { %>
                 <option value="<%=category%>" <%=product.category===category ? 'selected' : '' %>>
+                    <!-- this means we're setting the product category to match the item so it can have selected by default, else set it to empty  -->
                     <%= category %>
                 </option>
                 <% }%>
