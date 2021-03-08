@@ -66,11 +66,10 @@ app.get('/products/:id/edit', async (req, res) => {
     // by rendering, it allow us to then use ejs  here for page 'edit' to create a form.
 })
 app.put('/products/:id', async (req, res) => {
-    // const { id } = req.params;
-    // const product = await Product.findByIdAndUpdate(id, req.body, { runValidators: true, new: true });
-    // res.redirect(`/products/${product._id}`)
-    console.log(re.body)
-    res.send('put!!')
+    const { id } = req.params;
+    const product = await Product.findByIdAndUpdate(id, req.body, { runValidators: true, new: true });
+    res.redirect(`/products/${product._id}`)
+
 })
 app.listen(3000, () => {
     console.log("App is listening on port 3000")
