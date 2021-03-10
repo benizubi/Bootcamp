@@ -60,6 +60,6 @@ app.get('/rand', (require, res) => {
     // randomguy ha been defined on the ejs file and here we just calling it.
 })
 
-app.listen(3000, () => {
+app.listen(8000, () => {
     console.log("LISTENING ON PORT 3000")
 })

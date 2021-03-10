@@ -17,6 +17,10 @@ mongoose.connect('mongodb://localhost:27017/farmStand', { useNewUrlParser: true,
         console.log(log("OH no error!!!"))
         console.log(err)
     })
+const categories = ['fruit', 'vegetable', 'dairy'];
+// usually if i wanted for the choice option to automatically display the correct category i could write the line below on the option ejs section, but instead going to create a loop.
+//  <%= product.category === 'fruit' ? 'selected': '' %>
+// i've attached categories on the new so we can use ejs to loop it.
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -35,7 +39,7 @@ app.get('/products', async (req, res) => {
 //Creating //
 app.get('/products/new', (req, res) => {
     //    products is the folder name 
-    res.render('products/new')
+    res.render('products/new', { categories })
     // by rendering, it allow us to then use ejs  here for page 'new' to create a form.
 })
 // here is where we're creating a new product from the form and storing it on the db
@@ -62,7 +66,7 @@ app.get('/products/:id/edit', async (req, res) => {
     //    products is the folder name 
     const { id } = req.params;
     const product = await Product.findById(id)
-    res.render('products/edit', { product })
+    res.render('products/edit', { product, categories })
     // by rendering, it allow us to then use ejs  here for page 'edit' to create a form.
 })
 app.put('/products/:id', async (req, res) => {
@@ -70,6 +74,12 @@ app.put('/products/:id', async (req, res) => {
     const product = await Product.findByIdAndUpdate(id, req.body, { runValidators: true, new: true });
     res.redirect(`/products/${product._id}`)
 
+})
+// delete/ /
+app.delete('/products/:id', async (req, res) => {
+    const { id } = req.params;
+    const deletedP = await Product.findByIdAndDelete(id)
+    res.redirect('/products');
 })
 app.listen(3000, () => {
     console.log("App is listening on port 3000")
