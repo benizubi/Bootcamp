@@ -23,6 +23,13 @@
     <a href="/products/">All Products</a>
     <a href="/products/<%=foundProductId._id%>/edit "> Edit Product</a>
     <!-- by rendering foundProductId, it allows us to use it here to display what's in the db. -->
+    <form action="/products/<%=foundProductId._id%>?_method=DELETE " method="POST">
+        <button>Delete</button>
+    </form>
+
+
+
+
 </body>
 
 </html>
