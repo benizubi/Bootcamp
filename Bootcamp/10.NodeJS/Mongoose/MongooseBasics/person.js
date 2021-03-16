@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost:27017/shopApp', { useNewUrlParser: true, u
         // usually our code can go here, but we don't need to nest all our code here 
     })
     .catch(err => {
-        console.log(log("OHno error!!!"))
+        console.log(log("OHn no there's error!!!"))
         console.log(err)
     })
 //3. Mongoose Virtuals //
