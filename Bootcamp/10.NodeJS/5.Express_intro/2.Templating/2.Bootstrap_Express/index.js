@@ -51,7 +51,7 @@ app.get('/r/:subreddit', (request, response) => {
     }
 })
 
-app.get('/rand', (require, res) => {
+app.get('/rand', (req, res) => {
     const num = Math.floor(Math.random() * 10) + 1;
     res.render('random', { randomguy: num })
     // here we passing the second argument so that the random number we made can then be passed on to be rendered 
