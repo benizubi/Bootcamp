@@ -36,7 +36,7 @@ console.log(totalstuff);
 
 // indeOf(rusty) is basically asking in the array what's the index number for rusty here it's 0 For example:
 let rustyN = indexOf('rusty');
-console.log(rusty)
+console.log(rustyN)
 
 // Slice
 // Slice basically creates a copy of the same array and stores to another array if you use just the .slice() method
