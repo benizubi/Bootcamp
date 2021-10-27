@@ -5,7 +5,7 @@ app.get('/', (req, res) => {
     res.send('Home Page!')
 })
 app.get('/dogs', (req, res) => {
-    res.send('woof wood!')
+    res.send('woof woof!')
 })
 
 app.listen(3000, () => {
