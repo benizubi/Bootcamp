@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
-let morgan = require('morgan');
+const morgan = require('morgan');
 
+morgan('tiny')
+app.use(() => {
+    console.log("HEYYYYY!!!")
+})
 app.get('/', (req, res) => {
     res.send('Home Page!')
 })
