@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 
-morgan('tiny')
+// morgan('tiny')
 app.use(() => {
     console.log("HEYYYYY!!!")
 })
