@@ -3,9 +3,7 @@ const app = express();
 const morgan = require('morgan');
 
 // morgan('tiny')
-app.use(() => {
-    console.log("HEYYYYY!!!")
-})
+app.use(express.urlencoded)
 app.get('/', (req, res) => {
     res.send('Home Page!')
 })
