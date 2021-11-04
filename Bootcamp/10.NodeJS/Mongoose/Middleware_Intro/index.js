@@ -3,9 +3,9 @@ const app = express();
 const morgan = require('morgan');
 
 
-app.use(morgan('tiny'))
-// when using morgan to pass informtation to the server, it returns a log of the information we're passing and printingit on the server.
-
+app.use(morgan('dev'))
+// when using morgan to pass informtation to the server, it returns a log of the information we're passing and printing it on the server.
+// .use is telling the app to use function on the server everytime we make a request
 
 
 
