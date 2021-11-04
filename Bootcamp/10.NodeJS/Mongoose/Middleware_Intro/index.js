@@ -2,8 +2,14 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 
-// morgan('tiny')
-app.use(express.urlencoded)
+
+app.use(morgan('tiny'))
+// when using morgan to pass informtation to the server, it returns a log of the information we're passing and printingit on the server.
+
+
+
+
+
 app.get('/', (req, res) => {
     res.send('Home Page!')
 })
