@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const morgan = require('morgan');
 
 
-app.use(morgan('dev'))
+// app.use(morgan('dev'))
 // when using morgan to pass informtation to the server, it returns a log of the information we're passing and printing it on the server.
 // .use is telling the app to use function on the server everytime we make a request
 
