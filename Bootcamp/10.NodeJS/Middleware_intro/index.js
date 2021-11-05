@@ -14,7 +14,11 @@ app.use((req, res, next) => {
     next();
 
 })
+app.use((req, res, next) => {
+    console.log("This is my second middleware!!!")
+    next();
 
+})
 
 
 app.get('/', (req, res) => {
