@@ -11,7 +11,12 @@ const morgan = require('morgan');
 app.use(morgan('dev'))
 app.use((req, res, next) => {
     console.log("This is my first middleware!!!")
+    // We need to use next so that it moves on to the second middleware how it does with morgan,
+    // if i remove next() it will log on the server but doesnt move onto the next call 
     next();
+    // so after calling next, it's going to move onto the next middleware and will only log this after going through all middleware.
+    console.log("This is my first middleware after calling next")
+
 
 })
 app.use((req, res, next) => {
