@@ -34,7 +34,7 @@ const morgan = require('morgan');
 
 app.use(morgan('common'))
 app.use((req, res, next) => {
-    console.log(req.method.toUpperCase())
+    console.log(req.method.toUpperCase().req.path)
 })
 app.get('/', (req, res) => {
     res.send('Home Page!')
