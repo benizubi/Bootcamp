@@ -34,7 +34,9 @@ const morgan = require('morgan');
 
 app.use(morgan('tiny'))
 app.use((req, res, next) => {
+    req.method = 'get';
     console.log(req.method, req.path);
+
     next();
 })
 app.get('/', (req, res) => {
