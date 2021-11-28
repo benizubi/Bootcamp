@@ -29,21 +29,60 @@ const morgan = require('morgan');
 // app.use((req, res, next) => {
 //     console.log("This is my third middleware!!!")
 //     return next();
-
 // })
-
 app.use(morgan('tiny'))
-app.use((req, res, next) => {
-    req.method = 'get';
-    console.log(req.method, req.path);
 
+app.use((req, res, next) => {
+    req.requestTime = Date.now();
+    console.log(req.method, req.path);
     next();
 })
-app.get('/', (req, res) => {
-    res.send('Home Page!')
+// new middleware
+// this is just how to make a simple middleware
+app.use(('/dogs', (req, res, next) => {
+    console.log("I LOVE DOGS!!!")
+    next();
+}))
+// password middleware demo
+const verifyPassword = ((req, res, next) => {
+    const { password } = req.query;
+    if (password === 'chickennugget') {
+        next();
+    }
+    res.send('Sorry you need a password!!!')
 })
-app.get('/dogs', (req, res) => {
-    res.send('woof woooof!')
+
+
+
+
+
+
+
+app.get('/', (req, res) => {
+    console.log(`REQUEST DATE:  ${req.requestTime}`)
+    res.send('HOME PAGE!')
+})
+// I have added a middleware for /dogs route so the last request will only run if the verifypassword is sucessful
+app.get('/dogs', verifyPassword, (req, res) => {
+    console.log(`REQUEST DATE:  ${req.requestTime}`)
+    res.send('WOOF WOOF!')
+})
+// // If i run the code bellow here instead of next to morgan, the code will return undefined because it first run the first two servers. Thus, 
+// // app.use((req, res, next) => {
+// //     req.requestTime = Date.now();
+// //     console.log(req.method, req.path);
+// //     next();
+// // })
+// The 404 is what is rendered if nothing else is found from the routers
+// 404 is the status code for errors fix 
+
+app.get('/secret', verifyPassword, (req, res) => {
+    res.send('My secret is: sometimes I wear headphones in public so I dont have to talk to any')
+})
+// verify password has the next middelware and will return the next call if sucessful or else it will stop on the vierfypassword.
+
+app.use((req, res) => {
+    res.status(404).send('NOT FOUND!')
 })
 
 app.listen(3000, () => {
